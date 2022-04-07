@@ -1,0 +1,2932 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"80caaa83e0",applicationID:"186161870"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.edn.com/xmlrpc.php">
+
+<title>EDN - Function generator has variable frequency</title>
+
+<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NMNZ3NH');</script>
+    <!-- End Google Tag Manager -->
+
+<!-- BEGIN Krux ControlTag for "AspenCore Generic" -->
+<script class="kxct" data-id="sbnf4txm4" data-timing="async" data-version="3.0" type="text/javascript">
+  window.Krux||((Krux=function(){ Krux.q.push(arguments) }).q=[]);
+  (function(){
+    var k=document.createElement('script');k.type='text/javascript';k.async=true;
+    k.src=(location.protocol==='https:'?'https:':'http:')+'//cdn.krxd.net/controltag/sbnf4txm4.js';
+    var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
+  }());
+</script>
+<!-- END Krux ControlTag -->
+
+<script class="kxint" data-namespace="aspencore" type="text/javascript">
+window.Krux||((Krux=function(){ Krux.q.push(arguments); }).q=[]);
+(function(){
+  function retrieve(n){
+    var k= 'kx'+'aspencore_'+n, ls=(function(){
+      try {
+        return window.localStorage;
+      } catch(e) {
+        return null;
+      }
+    })();
+    if (ls) {
+        return ls[k] || '';
+    } else if (navigator.cookieEnabled) {
+        var m = document.cookie.match(k+'=([^;]*)');
+        return (m && unescape(m[1])) || '';
+    } else {
+        return '';
+    }
+  }
+  Krux.user = retrieve('user');
+  Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
+})();
+</script>
+
+<script type="text/javascript">
+var _doubleclickRand = 4330128162816;
+</script>
+<script>
+  window['GoogleAnalyticsObject'] = 'ga';
+  window['ga'] = window['ga'] || function() {
+    (window['ga'].q = window['ga'].q || []).push(arguments)
+  };
+</script>
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20164576-1']);
+    _gaq.push(['_setDomainName', '.edn.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+
+
+
+<!-- Start: GPT Sync -->
+<script src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script type="text/javascript">
+	var googletag = googletag || {};
+	googletag.cmd = googletag.cmd || [];
+	var gptAdSlots = [];
+	googletag.cmd.push(function () {
+		var billboardMapping = googletag.sizeMapping().addSize([800, 375], [970, 250]).addSize([0, 0], [320, 50]).build();
+    var leaderMapping = googletag.sizeMapping().addSize([800, 300], [728, 90]).addSize([0, 0], [320, 60]).build();
+    var filmstripMapping = googletag.sizeMapping().addSize([800, 600], [300, 600]).addSize([0, 0], [300, 300]).build();
+        <!--Welcome Ad-->
+		gptAdSlots[0] = gptAdSlots[0] = googletag.defineSlot("/74317539/edn", [[2,2]], 'div-gpt-ad-welcome').addService(googletag.pubads());
+		<!-- Billboard Ad -->
+		gptAdSlots[1] = googletag.defineSlot("/74317539/edn",[[970, 250], [320, 50]], 'div-gpt-ad-billboard-smartphonebanner').defineSizeMapping(billboardMapping).addService(googletag.pubads());
+		<!-- Medium Rectangle Ad -->
+		gptAdSlots[2] = googletag.defineSlot("/74317539/edn",[300, 250], 'div-gpt-ad-medium-rectangle').addService(googletag.pubads());
+		<!-- Filmstrip Ad -->
+		gptAdSlots[3] = googletag.defineSlot("/74317539/edn", [[300, 600], [300, 300]], 'div-gpt-ad-filmstrip').defineSizeMapping(filmstripMapping).addService(googletag.pubads());
+    <!-- Footer Ad -->
+		gptAdSlots[4] = googletag.defineSlot("/74317539/edn", [[728, 90], [320, 60]], 'div-gpt-ad-leader-smartphonebanner').defineSizeMapping(leaderMapping).addService(googletag.pubads());
+					gptAdSlots[6] = googletag.defineSlot("/74317539/edn", [[4, 4]], 'div-gpt-ad-inread').setTargeting('pos', ['video']).addService(googletag.pubads());
+						//Adslot 13 declaration
+		gptAdSlots[13]= googletag.defineSlot("/74317539/edn", ['fluid'], 'div-gpt-ad-native').setTargeting('type','native').addService(googletag.pubads());
+				<!-- Carousel Ad -->
+				gptAdSlots[14]= googletag.defineSlot("/74317539/edn", ['fluid'], 'div-gpt-ad-carousel').setTargeting('type','carousel').addService(googletag.pubads());
+						googletag.pubads().enableSingleRequest();
+		googletag.pubads().collapseEmptyDivs();
+                googletag.pubads().setTargeting('kw',['Analog','AnalogIcs','Converters','Passive','PowerSupplies','SignalSources','TestMeasurement']).setTargeting('aid',['4364021']);
+        googletag.pubads().setTargeting('author',["EDN"]);
+        		googletag.pubads().setTargeting("ksg", Krux.segments);
+		googletag.pubads().setTargeting("kuid", Krux.user);
+		googletag.pubads().enableAsyncRendering();
+		googletag.enableServices();
+	});
+</script>
+
+
+<!-- End: GPT -->
+
+<title>EDN - Function generator has variable frequency</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v12.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="The Exar XR-2206 function-generator IC cangenerate square, triangular, and sinusoidalsignals with low distortion. Its outputfrequency is inversely"/>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://www.edn.com/function-generator-has-variable-frequency/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="EDN - Function generator has variable frequency" />
+<meta property="og:description" content="The Exar XR-2206 function-generator IC cangenerate square, triangular, and sinusoidalsignals with low distortion. Its outputfrequency is inversely" />
+<meta property="og:url" content="https://www.edn.com/function-generator-has-variable-frequency/" />
+<meta property="og:site_name" content="EDN" />
+<meta property="article:tag" content="Analog" />
+<meta property="article:tag" content="Analog Ics" />
+<meta property="article:tag" content="Converters" />
+<meta property="article:tag" content="Passive" />
+<meta property="article:tag" content="Power Supplies" />
+<meta property="article:tag" content="Signal Sources" />
+<meta property="article:tag" content="Test &amp; Measurement" />
+<meta property="article:section" content="Design" />
+<meta property="article:published_time" content="2011-02-17T14:00:00+00:00" />
+<meta property="og:image" content="https://www.edn.com/wp-content/uploads/EDN-650x366.jpg?fit=650%2C366" />
+<meta property="og:image:secure_url" content="https://www.edn.com/wp-content/uploads/EDN-650x366.jpg?fit=650%2C366" />
+<meta property="og:image:width" content="650" />
+<meta property="og:image:height" content="366" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="The Exar XR-2206 function-generator IC cangenerate square, triangular, and sinusoidalsignals with low distortion. Its outputfrequency is inversely" />
+<meta name="twitter:title" content="EDN - Function generator has variable frequency" />
+<meta name="twitter:image" content="https://www.edn.com/wp-content/uploads/EDN-650x366.jpg?fit=650%2C366" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.edn.com/#website","url":"https://www.edn.com/","name":"EDN","description":"Voice of the Engineer","potentialAction":{"@type":"SearchAction","target":"https://www.edn.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.edn.com/function-generator-has-variable-frequency/#primaryimage","url":"https://www.edn.com/wp-content/uploads/EDN-650x366.jpg?fit=650%2C366","width":650,"height":366},{"@type":"WebPage","@id":"https://www.edn.com/function-generator-has-variable-frequency/#webpage","url":"https://www.edn.com/function-generator-has-variable-frequency/","inLanguage":"en-US","name":"EDN - Function generator has variable frequency","isPartOf":{"@id":"https://www.edn.com/#website"},"primaryImageOfPage":{"@id":"https://www.edn.com/function-generator-has-variable-frequency/#primaryimage"},"datePublished":"2011-02-17T14:00:00+00:00","dateModified":"2011-02-17T14:00:00+00:00","author":{"@id":"https://www.edn.com/#/schema/person/05eb5607260a9482625fd6fa533047b7"},"description":"The Exar XR-2206 function-generator IC cangenerate square, triangular, and sinusoidalsignals with low distortion. Its outputfrequency is inversely"},{"@type":"Person","@id":"https://www.edn.com#/schema/person/05eb5607260a9482625fd6fa533047b7","name":"EDN","image":{"@type":"ImageObject","@id":"https://www.edn.com#authorlogo","url":"https://www.edn.com/wp-content/uploads/EDN-650x366.jpg","caption":"EDN"}}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="EDN &raquo; Feed" href="https://www.edn.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="EDN &raquo; Comments Feed" href="https://www.edn.com/comments/feed/" />
+
+<meta name="created" content="February 17, 2011" />
+
+<meta name="author" content="EDN" />
+
+<meta name="featuredimage" content="https://www.edn.com/wp-content/uploads/EDN-650x366.jpg" />
+
+    <link rel="alternate" type="application/rss+xml" title="EDN &raquo; Function generator has variable frequency Comments Feed" href="https://www.edn.com/function-generator-has-variable-frequency/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.edn.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0' href='https://www.edn.com/_static/??/wp-includes/css/dist/block-library/style.min.css,/wp-content/themes/nikau/style.css?m=1585689679' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='nikau-fonts-css'  href='https://fonts.googleapis.com/css?family=Noticia+Text%3A400%2C400italic%2C700%2C700italic%7CKanit%3A400%2C500%2C600%2C700&#038;subset=latin%2Clatin-ext' media='all' />
+<link rel='stylesheet' id='all-css-2' href='https://www.edn.com/_static/??-eJyNjtEKwjAMRX/IGnUK+iB+ipQubNnatCwpxb+3KspAhb2E+3Byz4WSjIusyAraY0ABptFm43ryLYjePK6dyApmYMgm+dwRCwyoyboRrsQOOmScqFLyO34VzY0wCIin2vW8S6QhttnX/0JthyqAdXaMI6HxtvzZ/umwPFli42zSPOGLlh5Rl5gr8s4P/BLO28Ox2TenZre5A5T7fy0=' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.edn.com/_static/??-eJyNkEFOxDAMRS9EEsqoo7JAXIErmNS0bl0nkzgd9fakMOxGZSTL3vxnf393jYbEc+kxu6nWpWDabsNO+ckdCcxCQwJFu5D8iX0QRVGnIy4VEZqhGD8S9zsOMdrPIj2jXU+2OT1GKclmMlOP6TEAIW8fMJDs5tbGtkfYDtTlfv7t/0lv2ayE1xiS+hH9fOzr54DW1ZuZSe+mmoO83EsxcqlfVAFIAhLjIWpJ6Dh44KwhwYAmBt6+iLnC78tb03btuXs9d8/TNzZ/sMY='></script>
+<link rel='https://api.w.org/' href='https://www.edn.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.edn.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.edn.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4" />
+<link rel='shortlink' href='https://www.edn.com/?p=4364021' />
+<link rel="alternate" type="application/json+oembed" href="https://www.edn.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.edn.com%2Ffunction-generator-has-variable-frequency%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.edn.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.edn.com%2Ffunction-generator-has-variable-frequency%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style>
+<!--========== DATA LAYER ==========-->
+
+		<script>
+		dmpDataLayer = [{
+			"title": "Function generator has variable frequency",
+			"section": [""],
+			"pageType": "Design",
+			"keywords": ["Analog","Analog Ics","Converters","Passive","Power Supplies","Signal Sources","Test &amp; Measurement"]
+		}];
+		</script>
+
+		
+
+		<script>
+		    dataLayer =[{
+				  'Author':'EDN',
+				  'PubDate':'20110217'		    
+		    }];
+		</script>
+                <!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PXNPK92');</script>
+		<!-- End Google Tag Manager -->
+		<!--======== END DATA LAYER =========-->
+		<style type="text/css">
+					#front-section-threecolumn .entry-summary {display: block;}
+							#front-section-fourcolumn .entry-summary {display: block;}
+			</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><script type="text/javascript">
+function janrainSignOut(){
+			janrain.capture.ui.endCaptureSession();
+}
+(function() {
+		if (typeof window.janrain !== 'object') window.janrain = {};
+		window.janrain.settings = {};
+		window.janrain.settings.capture = {};
+
+		// capture settings
+		janrain.settings.capture.language = 'en-US';
+		janrain.settings.capture.redirectUri = 'https://www.edn.com/wp-admin/admin-ajax.php?action=janrain_capture_redirect_uri';
+		janrain.settings.capture.appId= 'yrnwjjpufjjenx8n97kuadd73f';
+		janrain.settings.capture.clientId = 'xpjt4frc5w2p8szh9dkum6ypas2fyzq3';
+		janrain.settings.capture.responseType = 'code';
+		janrain.settings.capture.captureServer = 'https://aspencore.us.janraincapture.com/';
+		janrain.settings.capture.registerFlow = 'socialRegistration';
+		janrain.settings.packages = ['capture','login'];
+
+		janrain.settings.capture.setProfileCookie = true;
+		janrain.settings.capture.keepProfileCookieAfterLogout = true;
+		janrain.settings.capture.setProfileData = true;
+
+		// styles
+		janrain.settings.capture.stylesheets = ['https://www.edn.com/wp-content/plugins/janrain-capture-screens/stylesheets/janrain.css','https://www.edn.com/wp-content/plugins/janrain-capture-screens/stylesheets/janrain-mobile.css',];
+janrain.settings.capture.recaptchaPublicKey = '6LeVKb4SAAAAAGv-hg5i6gtiOV4XrLuCDsJOnYoP'; //captcha			// engage settings
+			janrain.settings.language = 'en-US';
+			janrain.settings.appUrl = 'https://aspencore.rpxnow.com';
+			janrain.settings.tokenAction = 'event';
+						// federate settings
+			janrain.settings.capture.federate = '1';
+			janrain.settings.capture.federateServer = 'https://aspencore.us.janrainsso.com/';
+			janrain.settings.capture.federateXdReceiver = 'https://www.edn.com/wp-content/plugins/janrain-capture/xdcomm.html';
+			janrain.settings.capture.federateLogoutUri = 'https://www.edn.com/wp-login.php?action=logout&redirect_to=https%3A%2F%2Fwww.edn.com%3A443%2Ffunction-generator-has-variable-frequency%2F&_wpnonce=dcb4d83fcd&_janrainsso=1';
+					function isReady() { janrain.ready = true; };
+		if (document.addEventListener) {
+				document.addEventListener("DOMContentLoaded", isReady, false);
+		} else {
+				window.attachEvent('onload', isReady);
+		}
+
+		var e = document.createElement('script');
+		e.type = 'text/javascript';
+		e.id = 'janrainAuthWidget'
+		var url = document.location.protocol === 'https:' ? 'https://' : 'http://';
+		url += 'widget-cdn.rpxnow.com/load/aspencore';
+		e.src = url;
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(e, s);
+})();
+		</script><script type="text/javascript">// call our code/token exchanger, and use the token to set up a capture session
+function getTokenForCode(code, redirect_uri) {
+    var url = '/wp-admin/admin-ajax.php?action=janrain_capture_redirect_uri&code=';
+    url += code;
+    window.location.href = url;
+}
+
+function janrainReturnExperience() {
+    var span = document.getElementById('traditionalWelcomeName');
+    var name = janrain.capture.ui.getReturnExperienceData("displayName");
+    if (span && name) {
+        span.innerHTML = "Welcome back, " + name + "!";
+    }
+}
+
+function janrainCaptureWidgetOnLoad() {
+    //check for access token in localStorage and create session
+    if(localStorage && localStorage.getItem("janrainCaptureTokenWP")) {
+        janrain.capture.ui.createCaptureSession(localStorage.getItem("janrainCaptureTokenWP"));
+        localStorage.removeItem("janrainCaptureTokenWP");
+    }
+
+    function handleCaptureLogin(result) {
+        // console.log ("exchanging code for token...");
+        getTokenForCode(result.authorizationCode, janrain.settings.capture.redirectUri);
+    }
+
+    janrain.events.onCaptureAccessDenied.addHandler(function(result){
+        janrain.capture.ui.createCaptureSession(access_token);
+    });
+
+    janrain.events.onCaptureScreenShow.addHandler(function(result){
+        if (result.screen == "returnTraditional") {
+            janrainReturnExperience();
+        }
+    });
+
+    janrain.events.onCaptureLoginSuccess.addHandler(handleCaptureLogin);
+    janrain.events.onCaptureRegistrationSuccess.addHandler(handleCaptureLogin);
+
+    janrain.capture.ui.start();
+}</script>	<style type="text/css" id="nikau-header-css">
+		h1.site-title,
+	p.site-title,
+	p.site-description {
+		position: absolute;
+		clip: rect(1px, 1px, 1px, 1px);
+	}
+		</style>
+<link rel="icon" href="https://www.edn.com/wp-content/uploads/2019/12/EDN-favicon-1.ico" sizes="32x32" />
+<link rel="icon" href="https://www.edn.com/wp-content/uploads/2019/12/EDN-favicon-1.ico" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.edn.com/wp-content/uploads/2019/12/EDN-favicon-1.ico" />
+<meta name="msapplication-TileImage" content="https://www.edn.com/wp-content/uploads/2019/12/EDN-favicon-1.ico" />
+<!--Allows FontAwesome Social Icons to appear in FireFox-->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!--Google Site Verification-->
+<meta name="google-site-verification" content="QW17msUTdU9qp_KZqQGSkxXQFLfxLjAChXcQ1uaiiHY" />
+</head>
+<!-- Janrain Styles -->
+<style>
+/*#janrainModal{height:80% !important;overflow-y: scroll !important;}*/
+#traditionalRegistration .checkboxes .capture_form_item{
+	margin-bottom: 0;
+}
+#traditionalRegistration .checkboxes  .capture_checkbox{
+	padding: 0;
+	background-color: #fff;
+}
+.janrain-capture-ui#traditionalRegistration .capture_form_item label{
+	height: auto;
+	overflow: visible;
+	text-indent: 0;
+	text-indent: inherit;
+	display: block;
+	vertical-align: middle;
+	margin: 0 10px 0 5px;
+	width: 30%;
+	float: left;
+}
+#traditionalRegistration  .capture_form_item{
+	min-height: 24px !important;
+}
+#traditionalRegistration .capture_text_input, #traditionalRegistration .capture_text_input, #traditionalRegistration .capture_textarea, #traditionalRegistration .capture_select_arrow{
+	float: left;
+	width:66% !important;
+}
+#traditionalRegistration .checkboxes label{
+	width:94% !important;
+}
+#traditionalRegistration #traditionalRegistrationSave, #traditionalRegistration .capture_tip, #traditionalRegistration .capture_tip_validating, #traditionalRegistration .capture_tip_error{
+	margin-left: 33%;
+}
+#traditionalRegistration .checkboxes .capture_tip_error{
+	margin-left:6% !important;
+}
+#traditionalRegistration #traditionalRegistrationSave{margin-top:10px;}
+#janrainModal .capture_header {
+    margin-bottom: 0px !important;;
+}
+.janrain-capture-ui .capture_backgroundColor {
+   margin-top: 0px !important;
+}
+</style>
+
+<body class="post-template-default single single-post postid-4364021 single-format-standard wp-custom-logo has-thumb custom-logo-on offcanvas-widgets-off">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMNZ3NH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id='div-gpt-ad-welcome'>
+        <script type='text/javascript'>
+            googletag.display('div-gpt-ad-welcome');
+        </script>
+    </div>
+
+<!--========== MEGA MENU ===========-->
+
+
+<!-- MAX MEGA MENU PLUGIN MENU -->
+<!-- NOT BEING USED -->
+
+
+
+
+<!-- END PLUGIN MENU-->
+
+<!-- STATIC MEGA MENU -->
+	
+
+<div class="section globalHeader hidden-mobile-down" id="globalHeader">
+    <div class="container -noWrap">
+        <ul class="globalNav" aria-label="Global" role="navigation">
+
+            <li class="globalNav-item globalNav-network click-trigger" data-content-id="acnetwork" role="button" tabindex="0">
+                <span class="networkLink">Aspencore network</span>
+                <div class="megaMenu click-content" id="acnetwork">
+                    <div class="mmSide">
+                        <div class="mmSide-item is-current">
+                            <a href="#mmNews" class="mmSide-link">News & Analytics
+                                <i class="icon-arrow_right"></i>
+                            </a>
+                        </div>
+                        <div class="mmSide-item">
+                            <a href="#mmProducts" class="mmSide-link">Products
+                                <i class="icon-arrow_right"></i>
+                            </a>
+                        </div>
+                        <div class="mmSide-item">
+                            <a href="#mmDesign" class="mmSide-link">Design
+                                <i class="icon-arrow_right"></i>
+                            </a>
+                        </div>
+                        <div class="mmSide-item">
+                            <a href="#mmTools" class="mmSide-link">Tools
+                                <i class="icon-arrow_right"></i>
+                            </a>
+                        </div>
+                        <div class="mmSide-item">
+                            <a href="#mmAbout" class="mmSide-link">About Us
+                                <i class="icon-arrow_right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mmContent in-view" id="mmNews">
+                        <div class="mmContent-header">
+                            <div class="mmContent-icon">
+                            <img src="/wp-content/uploads/ap-icon.png"/>
+                                <!--<i class="icon-aspencore"></i>-->
+                            </div>
+                            <div class="mmContent-title">AspenCore Network</div>
+                            <div class="mmContent-filler"></div>
+                            <div class="mmContent-controls">
+                                <button class="mmContent-prev button -circular">
+                                    <!--<i class="icon-chevron_left"></i>-->
+                                    <img src="/wp-content/uploads/left-chevron.png"/>
+                                </button>
+                                <button class="mmContent-next button -circular">
+                                    <!--<i class="icon-chevron_right"></i>-->
+                                    <img src="/wp-content/uploads/right-chevron.png"/>
+                                </button>
+                            </div>
+                            <button class="click-close mmContent-next button -circular">
+                                <!--<i class="icon-close"></i>-->
+                                <img src="/wp-content/uploads/x-icon.png"/>
+                            </button>
+                        </div>
+                        <div class="mmContent-wrap">
+                            <div class="mmContent-slider">
+                                <div class="mmCard">
+                                    <a href="https://www.eetimes.com/" target="_blank">
+                                        <figure class="mmCard-img">
+                                            <img src="/wp-content/uploads/dcfaec25b9c732cfffb004e8d6352938.png" alt="EEtimes" />
+                                        </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        News the global electronics community can trust
+                                        <br/>
+                                        <a href="http://www.eetimes.com/" target="_blank">eetimes.com</a>
+                                    </div>
+                                </div>
+                                <div class="mmCard">
+                                    <a href="http://www.powerelectronicsnews.com/" target="_blank">
+                                        <figure class="mmCard-img">
+                                            <img src="/wp-content/uploads/6d487d81fce44c9c2381c37971b31efc.png" alt="power electronics news" />
+                                        </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        The trusted news source for power-conscious design engineers
+                                        <br/>
+                                        <a href="http://www.powerelectronicsnews.com/" target="_blank">powerelectronicsnews.com</a>
+                                    </div>
+                                </div>
+                                <div class="mmCard">
+                                    <a href="http://www.ebnonline.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/22c910e0adf515451d109c23105de02c.png" alt="ebn" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        Supply chain news for the electronics industry
+                                        <br/>
+                                        <a href="http://www.ebnonline.com/" target="_blank">ebnonline.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                <a href="http://www.elektroda.pl/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/2dc8297ba0272c355dbf9ba7676d5d24.png" alt="elektroda" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        The can't-miss forum engineers and hobbyists
+                                        <br/>
+                                        <a href="http://www.elektroda.pl/" target="_blank">elektroda.pl</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mmContent" id="mmProducts">
+                        <div class="mmContent-header">
+                            <div class="mmContent-icon">
+                            <img src="/wp-content/uploads/ap-icon.png"/>
+                                <!--<i class="icon-aspencore"></i>-->
+                            </div>
+                            <div class="mmContent-title">AspenCore Network</div>
+                            <div class="mmContent-filler"></div>
+                            <div class="mmContent-controls">
+                                <button class="mmContent-prev button -circular">
+                                    <!--<i class="icon-chevron_left"></i>-->
+                                    <img src="/wp-content/uploads/left-chevron.png"/>
+                                </button>
+                                <button class="mmContent-next button -circular">
+                                    <!--<i class="icon-chevron_right"></i>-->
+                                    <img src="/wp-content/uploads/right-chevron.png"/>
+                                </button>
+                            </div>
+                            <button class="click-close mmContent-next button -circular">
+                                <!--<i class="icon-close"></i>-->
+                                <img src="/wp-content/uploads/x-icon.png"/>
+                            </button>
+                        </div>
+                        <div class="mmContent-wrap">
+                            <div class="mmContent-slider">
+                                <div class="mmCard">
+                                    <a href="http://www.electronicproducts.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/706a36065aa35bee453549807d246889.png" alt="Electronics Products" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        Product news that empowers design decisions
+                                        <br/>
+                                        <a href="http://www.electronicproducts.com/" target="_blank">electronicproducts.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                 <a href="http://www.datasheets.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/098f4c7e981973520e417aab69f601e7.png" alt="Datasheets.com" />
+                                    </figure></a>
+                                    <div class="mmCard-text">
+                                        Design engineer' search engine for electronic components
+                                        <br/>
+                                        <a href="http://www.datasheets.com/" target="_blank">datasheets.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                <a href="http://www.eem.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/0882892d9552d95916d70ef88fc8deca.png" alt="eem" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        The electronic components resource for engineers and purchasers
+                                        <br/>
+                                        <a href="http://www.eem.com/" target="_blank">eem.com</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mmContent" id="mmDesign">
+                        <div class="mmContent-header">
+                            <div class="mmContent-icon">
+                            <img src="/wp-content/uploads/ap-icon.png"/>
+                                <!--<i class="icon-aspencore"></i>-->
+                            </div>
+                            <div class="mmContent-title">AspenCore Network</div>
+                            <div class="mmContent-filler"></div>
+                            <div class="mmContent-controls">
+                                <button class="mmContent-prev button -circular">
+                                    <!--<i class="icon-chevron_left"></i>-->
+                                    <img src="/wp-content/uploads/left-chevron.png"/>
+                                </button>
+                                <button class="mmContent-next button -circular">
+                                    <!--<i class="icon-chevron_right"></i>-->
+                                    <img src="/wp-content/uploads/right-chevron.png"/>
+                                </button>
+                            </div>
+                            <button class="click-close mmContent-next button -circular">
+                                <!--<i class="icon-close"></i>-->
+                                <img src="/wp-content/uploads/x-icon.png"/>
+                            </button>
+                        </div>
+                        <div class="mmContent-wrap">
+                            <div class="mmContent-slider">
+                                <div class="mmCard">
+                                    <a href="http://www.embedded.com/ " target="_blank ">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/f25799df63a72b343037e4f25ce637d0.png" alt="embedded.com" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        The design site for hardware software, and firmware engineers
+                                        <br/>
+                                        <a href="http://www.embedded.com/ " target="_blank ">embedded.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard ">
+                                    <a href="http://www.electroschematics.com/" target="_blank">
+                                    <figure class="mmCard-img ">
+                                        <img src="/wp-content/uploads/927f69e30c7005c79ee64f1bea5b0126.png" alt="Elector Schematics" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        Where makers and hobbyists share projects
+                                        <br/>
+                                        <a href="http://www.electroschematics.com/" target="_blank">electroschematics.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                <a href="http://www.edn.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/4a269c14f80de3a3a032f7b21ed8bbe4.png" alt="edn Network" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        The design site for electronics engineers and engineering managers
+                                        <br/>
+                                        <a href="http://www.edn.com/" target="_blank">edn.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                    <a href="http://www.electronics-tutorials.ws/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/4f4544be6ae0d4a6ecb3763ffcace961.png" alt="electronic tutorials" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        The learning center for future and novice engineers
+                                        <br/>
+                                        <a href="http://www.electronics-tutorials.ws/" target="_blank">electronics-tutorials.ws</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                     <a href="http://www.techonline.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/3dba11e10d7fa0b6e6c966d24e7ff3ba.png" alt="TechOnline" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        The educational resource for the global engineering community
+                                        <br/>
+                                        <a href="http://www.techonline.com/" target="_blank">techonline.com</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mmContent" id="mmTools">
+                        <div class="mmContent-header">
+                            <div class="mmContent-icon">
+                            <img src="/wp-content/uploads/ap-icon.png"/>
+                                <!--<i class="icon-aspencore"></i>-->
+                            </div>
+                            <div class="mmContent-title">AspenCore Network</div>
+                            <div class="mmContent-filler"></div>
+                            <div class="mmContent-controls">
+                                <button class="mmContent-prev button -circular">
+                                    <!--<i class="icon-chevron_left"></i>-->
+                                    <img src="/wp-content/uploads/left-chevron.png"/>
+                                </button>
+                                <button class="mmContent-next button -circular">
+                                    <!--<i class="icon-chevron_right"></i>-->
+                                    <img src="/wp-content/uploads/right-chevron.png"/>
+                                </button>
+                            </div>
+                            <button class="click-close mmContent-next button -circular">
+                                <!--<i class="icon-close"></i>-->
+                                <img src="/wp-content/uploads/x-icon.png"/>
+                            </button>
+                        </div>
+                        <div class="mmContent-wrap">
+                            <div class="mmContent-slider">
+                                <div class="mmCard">
+                                     <a href="https://www.eeweb.com/ " target="_blank ">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/7051344d9678dce3ecc66c8848bd6507.png" alt="eeweb.com" />
+                                    </figure></a>
+                                    <div class="mmCard-text">
+                                        Where electronics engineers discover the latest toolsThe design site for hardware software, and firmware engineers
+                                        <br/>
+                                        <a href="https://www.eeweb.com/ " target="_blank ">eeweb.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="mmCard">
+                                    <a href="http://www.partsim.com/" target="_blank "><figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/5c91e78680a078a1144a99db55192708.png" alt="Part Sim" />
+                                    </figure></a>
+                                    <div class="mmCard-text">
+                                        Circuit simulation made easy
+                                        <br/>
+                                        <a href="http://www.partsim.com/" target="_blank ">partsim.com</a>
+                                    </div>
+                                </div>
+                                <div class="mmCard">
+                                     <a href="http://schematics.com/" target="_blank "><figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/37206425924024db91e4b8f49e2b1f2e.png" alt="scheamtics.com" />
+                                    </figure></a>
+                                    <div class="mmCard-text">
+                                        Brings you all the tools to tackle projects big and small - combining real-world components with online collaboration
+                                        <br/>
+                                        <a href="http://schematics.com/" target="_blank ">schematics.com</a>
+                                    </div>
+                                </div>
+                                <div class="mmCard">
+                                    <a href="http://www.pcbweb.com/" target="_blank ">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/45f0bcb292b6ff5a2e02ee8345a74c54.png" alt="PCB Web" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        Hardware design made easy
+                                        <br/>
+                                        <a href="http://www.pcbweb.com/" target="_blank ">pcbweb.com</a>
+                                    </div>
+                                </div>
+                                <div class="mmCard">
+                                    <a href="http://www.schematics.io/" target="_blank ">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/e3d05c371af1c56f20577da4d10c10f6.png" alt="schematics.io" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        A free online environment where users can create, edit, and share electrical schematics, or convert between popular file
+                                        formats like Eagle, Altium, and OrCAD.
+                                        <br/>
+                                        <a href="http://www.schematics.io/" target="_blank ">schematics.io</a>
+                                    </div>
+                                </div>
+                                <div class="mmCard">
+                                    <a href="http://www.transim.com/iot" target="_blank ">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/1cd0679ae3cf2a7088eb15c9e48e9580.png" alt="Product Advisor" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        Find the IoT board you’ve been searching for using this interactive solution space to help you visualize the product selection
+                                        process and showcase important trade-off decisions.
+                                        <br/>
+                                        <a href="http://www.transim.com/iot" target="_blank ">transim.com/iot</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                    <a href="https://www.transim.com/Products/Engage" target="_blank ">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/16f9b66796092b3dd986ffdef8510b1d.png" alt="Transim Engage" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        Transform your product pages with embeddable schematic, simulation, and 3D content modules while providing interactive user
+                                        experiences for your customers.
+                                        <br/>
+                                        <a href="https://www.transim.com/Products/Engage" target="_blank ">transim.com/Products/Engage</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mmContent" id="mmAbout">
+                        <div class="mmContent-header">
+                            <div class="mmContent-icon">
+                            <img src="/wp-content/uploads/ap-icon.png"/>
+                                <!--<i class="icon-aspencore"></i>-->
+                            </div>
+                            <div class="mmContent-title">AspenCore Network</div>
+                            <div class="mmContent-filler"></div>
+                            <div class="mmContent-controls">
+                                <button class="mmContent-prev button -circular">
+                                    <!--<i class="icon-chevron_left"></i>-->
+                                    <img src="/wp-content/uploads/left-chevron.png"/>
+                                </button>
+                                <button class="mmContent-next button -circular">
+                                    <!--<i class="icon-chevron_right"></i>-->
+                                    <img src="/wp-content/uploads/right-chevron.png"/>
+                                </button>
+                            </div>
+                            <button class="click-close mmContent-next button -circular">
+                                <!--<i class="icon-close"></i>-->
+                                <img src="/wp-content/uploads/x-icon.png"/>
+                            </button>
+                        </div>
+                        <div class="mmContent-wrap">
+                            <div class="mmContent-slider">
+                                <div class="mmCard">
+                                    <a href="http://www.aspencore.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/aeccbcd495a9bb3498eaa758a1b25cbe.png" alt="AspenCore" />
+                                    </figure></a>
+                                    <div class="mmCard-text">
+                                        A worldwide innovation hub servicing component manufacturers and distributors with unique marketing solutions
+                                        <br/>
+                                        <a href="http://www.aspencore.com/" target="_blank">aspencore.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                    <a href="https://www.siliconexpert.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/db2daee014c5f4869f8de0896d3a2b8c.png" alt="Silicon Expert" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        SiliconExpert provides engineers with the data and insight they need to remove risk from the supply chain.
+                                        <br/>
+                                        <a href="https://www.siliconexpert.com/" target="_blank">siliconexpert.com</a>
+                                    </div>
+
+                                </div>
+                                <div class="mmCard">
+                                    <a href="https://www.transim.com/" target="_blank">
+                                    <figure class="mmCard-img">
+                                        <img src="/wp-content/uploads/cba54a429b63cd68bea2b7431c99e052.png" alt="Transim" />
+                                    </figure>
+                                    </a>
+                                    <div class="mmCard-text">
+                                        Transim powers many of the tools engineers use every day on manufacturers' websites and can develop solutions for any company.
+                                        <br/>
+                                        <a href="https://www.transim.com/" target="_blank">transim.com</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+			<!-- 'ABOUT US' LINK -->
+            <li class="globalNav-item hidden-tablet-down">
+			<!-- <a href="https://redesign-eet.azurewebsites.net/#aboutus" class="globalNav-link"> -->
+			<a href="/about-us" class="globalNav-link">
+			About Us</a></li>
+        </ul>
+
+		<!-- SOCIAL ICONS -->
+        <ul class="socialNav" aria-label="Social" role="navigation">
+
+
+			<!-- LINKEDIN-->
+			<li class="socialNav-item">
+			<a target="_blank" href="https://www.linkedin.com/company/edn-network" class="socialNav-link icon icon-linkedin">
+			<!--<img src="/wp-content/uploads/linkedin-icon.png"/>-->
+			<i class="fa fa-linkedin" aria-hidden="true"></i>
+			</a></li>
+
+
+			<!-- INSTAGRAM -->
+			<li class="socialNav-item">
+			<a target="_blank" href="https://www.instagram.com/edn_network/" class="socialNav-link icon icon-instagram">
+			<!--<img src="/wp-content/uploads/instagram-icon.png"/>-->
+			<i class="fa fa-instagram" aria-hidden="true"></i>
+			</a></li>
+
+
+			<!-- TWITTER -->
+			<li class="socialNav-item">
+			<a target="_blank" href="https://twitter.com/EDNcom" class="socialNav-link icon icon-twitter">
+			<!--<img src="/wp-content/uploads/twitter-icon.png"/>-->
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+			</a></li>
+
+			<!-- FACEBOOK -->
+            <li class="socialNav-item"><a target="_blank" href="https://www.facebook.com/ElectronicsDesignNetwork/" class="socialNav-link icon icon-facebook">
+			<!--<img src="/wp-content/uploads/facebook-icon.png"/>-->
+			<i class="fa fa-facebook" aria-hidden="true"></i>
+			</a></li>
+
+
+			<!-- RSS FEED -->
+            <li class="socialNav-item">
+			<!-- <a href="/rss_simple.asp" class="socialNav-link icon icon-rss"> -->
+			<a target="_blank" href="/feed" class="socialNav-link icon icon-rss">
+			<!--<img src="/wp-content/uploads/rss-icon.png"/>-->
+			<i class="fa fa-rss" aria-hidden="true"></i>
+			</a></li>
+            <!--li aria-expanded="false" class="socialNav-item hidden-tablet-down"><a href="#browseall" class="socialNav-link">browse all <i class="icon-arrow_down"></i></a></li-->
+        </ul>
+    </div>
+</div>
+<!--============== END MEGA MENU ===============-->
+
+<!--======== BANNER ADVERTISEMENT ==========-->
+
+<!-- Billboard Ad -->
+
+
+<div id="bannerWrap">
+
+<div id="div-gpt-ad-billboard-smartphonebanner" >
+	<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-billboard-smartphonebanner'); });
+	</script>
+</div>
+<p>Advertisement</p>
+</div><!-- END #bannerWrap -->
+
+<!--======== END BANNER ADVERTISEMENT ==========-->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXNPK92"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->	
+	
+<!--=============== MAIN NAV ===================-->
+<header id="masthead" class="site-header cf" role="banner">
+	<div class="site-header-content">
+		<div id="site-branding">
+							<p class="site-title"><a href="https://www.edn.com/" rel="home">EDN</a></p>
+			
+							<div class="custom-logo-wrap">
+					<a href="https://www.edn.com/" class="custom-logo-link" rel="home"><img width="480" height="224" src="https://www.edn.com/wp-content/uploads/2019/12/edn-logo-2020-1.png?fit=480%2C224" class="custom-logo" alt="EDN" srcset="https://www.edn.com/wp-content/uploads/2019/12/edn-logo-2020-1.png?w=480 480w, https://www.edn.com/wp-content/uploads/2019/12/edn-logo-2020-1.png?w=300 300w" sizes="(max-width: 480px) 100vw, 480px" /></a>				</div><!-- end .custom-logo-wrap -->
+			
+							<p class="site-description">Voice of the Engineer</p>
+			
+			<button id="overlay-open" class="overlay-open overlay-btn"><span>Menu</span></button>
+
+					</div><!-- end #site-branding -->
+
+<!--====== Former Banner ad location =======-->
+
+		<!-- ORIGINAL .main-navigation HERE -->
+		<nav id="desktop-navigation" class="desktop-navigation cf" role="navigation">
+			<ul id="menu-main-menu" class="menu"><li id="menu-item-15" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-15"><a href="https://www.edn.com">Home</a></li>
+<li id="menu-item-30" class="sub-menu-columns menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-30"><a href="#">Design Centers</a>
+<ul class="sub-menu">
+	<li id="menu-item-4464374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4464374"><a href="/tag/5g/">5G</a></li>
+	<li id="menu-item-32" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="/designcenter/analog/">Analog</a></li>
+	<li id="menu-item-33" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33"><a href="/designcenter/automotive/">Automotive</a></li>
+	<li id="menu-item-31" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href="/designcenter/communications/">Communications</a></li>
+	<li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href="/designcenter/components-packaging/">Components &#038; Packaging</a></li>
+	<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="/designcenter/consumer/">Consumer</a></li>
+	<li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href="/designcenter/diy/">DIY</a></li>
+	<li id="menu-item-37" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a href="/designcenter/ic-design/">IC Design</a></li>
+	<li id="menu-item-38" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-38"><a href="/designcenter/leds/">LEDs</a></li>
+	<li id="menu-item-39" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39"><a href="/designcenter/medical/">Medical</a></li>
+	<li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40"><a href="/designcenter/pcb/">PCB</a></li>
+	<li id="menu-item-41" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a href="/designcenter/power-management/">Power Management</a></li>
+	<li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href="/designcenter/sensors/">Sensors</a></li>
+	<li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43"><a href="/designcenter/systems-design/">Systems Design</a></li>
+	<li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="/designcenter/test-measurement/">Test &#038; Measurement</a></li>
+</ul>
+</li>
+<li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-45"><a href="#">Products &#038; Teardowns</a>
+<ul class="sub-menu">
+	<li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="/category/product/">Products</a></li>
+	<li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="/category/design/under-the-hood-teardown/">Teardowns</a></li>
+</ul>
+</li>
+<li id="menu-item-51" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="/category/discussion/blog/">Blogs</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="/category/design/design-idea/">Design Ideas</a></li>
+<li><a rel="nofollow" href="javascript:janrain.capture.ui.modal.open();" onclick="janrain.capture.ui.endCaptureSession();" >Log in</a onclick="janrain.capture.ui.endCaptureSession();" ></li></ul>		</nav><!-- .main-navigation -->
+		<!-- END ORGINAL .main-navigation HERE -->
+		<button id="search-open" class="search-open search-btn"><span>Search</span></button>
+			<div class="desktop-search">
+				<form role="search" method="get" class="search-form" action="https://www.edn.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>			</div><!-- end .desktop-search -->
+	</div><!-- .site-header-content -->
+
+	<div class="sticky-header hidden" aria-hidden="true">
+		<button id="overlay-open-sticky" class="overlay-open overlay-btn"><span>Menu</span></button>
+		<button id="search-open-sticky" class="search-open search-btn"><span>Search</span></button>
+
+				 <div class="custom-logo-wrap">
+			 <a href="https://www.edn.com/" class="custom-logo-link" rel="home"><img width="480" height="224" src="https://www.edn.com/wp-content/uploads/2019/12/edn-logo-2020-1.png?fit=480%2C224" class="custom-logo" alt="EDN" srcset="https://www.edn.com/wp-content/uploads/2019/12/edn-logo-2020-1.png?w=480 480w, https://www.edn.com/wp-content/uploads/2019/12/edn-logo-2020-1.png?w=300 300w" sizes="(max-width: 480px) 100vw, 480px" /></a>		 </div><!-- end .custom-logo-wrap -->
+		
+			</div><!-- end .sticky-header -->
+
+	<div class="inner-offcanvas-wrap">
+		<div class="close-btn-wrap">
+			<button id="overlay-close" class="overlay-btn"><span>Close</span></button>
+		</div><!-- end .close-btn-wrap -->
+		<div class="mobile-search">
+			<form role="search" method="get" class="search-form" action="https://www.edn.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>		</div><!-- end .mobile-search -->
+
+				<nav id="overlay-nav" class="main-nav cf" role="navigation">
+		<ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-15"><a href="https://www.edn.com">Home</a></li>
+<li class="sub-menu-columns menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-30"><a href="#">Design Centers</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4464374"><a href="/tag/5g/">5G</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32"><a href="/designcenter/analog/">Analog</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33"><a href="/designcenter/automotive/">Automotive</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31"><a href="/designcenter/communications/">Communications</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34"><a href="/designcenter/components-packaging/">Components &#038; Packaging</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="/designcenter/consumer/">Consumer</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href="/designcenter/diy/">DIY</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a href="/designcenter/ic-design/">IC Design</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-38"><a href="/designcenter/leds/">LEDs</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39"><a href="/designcenter/medical/">Medical</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40"><a href="/designcenter/pcb/">PCB</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a href="/designcenter/power-management/">Power Management</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href="/designcenter/sensors/">Sensors</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43"><a href="/designcenter/systems-design/">Systems Design</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="/designcenter/test-measurement/">Test &#038; Measurement</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-45"><a href="#">Products &#038; Teardowns</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="/category/product/">Products</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="/category/design/under-the-hood-teardown/">Teardowns</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="/category/discussion/blog/">Blogs</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="/category/design/design-idea/">Design Ideas</a></li>
+<li><a rel="nofollow" href="javascript:janrain.capture.ui.modal.open();" onclick="janrain.capture.ui.endCaptureSession();" >Log in</a onclick="janrain.capture.ui.endCaptureSession();" ></li></ul>		</nav><!-- .main-navigation -->
+
+		
+	</div><!-- end .desktop-offcanvas-wrap -->
+</header><!-- end #masthead -->
+
+
+<div id="singlepost-wrap" class="singlepost-wrap cf">
+
+	
+		
+
+<!-- PARENT THEME -->
+
+
+<article id="post-4364021" class="post-4364021 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-design-idea tag-analog tag-analog-ics tag-converters tag-passive tag-power-supplies tag-signal-sources tag-test-measurement">
+	<header class="entry-header cf">
+		
+		<div class="title-wrap">
+						<div class="entry-cats">
+				<a href="https://www.edn.com/category/design/" rel="category tag">Design</a> <a href="https://www.edn.com/category/design/design-idea/" rel="category tag">Design Ideas</a>			</div><!-- end .entry-cats -->
+						<h1 class="entry-title">Function generator has variable frequency</h1>            
+            <!--Excerpt intro on single post-->
+			
+		</div><!-- end .title-wrap -->
+
+<!-- Header Post and Author Info BEFORE post but AFTER the post title-->
+		<div class="entry-meta cf">
+			<div class="meta-columnone">
+			
+			
+	
+			
+			
+<!-- Display Author Avatar -->			
+			
+          <div class="author-pic">
+            <div class="author-avatar">
+                    <img alt='' src='https://secure.gravatar.com/avatar/53a21413533c8a01697fce8826a6ae65?s=256&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/53a21413533c8a01697fce8826a6ae65?s=512&#038;d=mm&#038;r=g 2x' class='avatar avatar-256 photo' height='256' width='256' />            </div><!-- .author-avatar -->           
+           </div><!-- .author-pic -->
+        
+<!-- END Display Author Avatar -->
+			
+				<a href="https://www.edn.com/function-generator-has-variable-frequency/" title="2:00 pm" rel="bookmark"><span class="entry-date">February 17, 2011</span></a> <span class="meta-sep"></br>by</span> <a href="https://www.edn.com/author/edn/" title="Posts by EDN" class="author url fn" rel="author">EDN</a>&nbsp;
+			</div><!-- end .meta-columnone -->
+
+			<div class="meta-columntwo">
+								<div class="entry-comments-single">
+					<span class="entry-comments"><a href="https://www.edn.com/function-generator-has-variable-frequency/#comments">Comment 1</a></span>				</div><!-- end .entry-comments -->
+							</div><!-- end .meta-columntwo -->
+
+			<div class="meta-columnthree">
+			
+			<!-- PrintFriendly PDF/PRINT Button [Top Right of Post] -->
+						<!-- end PrintFriendly-->
+			
+							</div><!-- end .meta-columnthree -->
+		</div><!-- end .entry-meta -->
+	</header><!-- end .entry-header -->
+
+	<div class="contentwrap">
+					
+			
+			<!-- Hide Single Post Featured Image, commented out -->
+			
+			<!--
+			<div class="entry-thumbnail">
+				<a href=""></a>
+				-->
+			<!--	
+			</div>
+			-->
+			<!-- end .entry-thumbnail -->
+			
+		
+		<div id="socialicons-sticky">
+			<div id="entry-content" class="entry-content">
+				<p>The <a href="/common/jumplink.php?target=http%3a%2f%2fwww.exar.com">Exar</a> XR-2206 function-generator IC cangenerate square, triangular, and sinusoidalsignals with low distortion. Its outputfrequency is inversely proportionalto the components in an RC network,according to the formula F=1/RC.</p>
+<p>Use a potentiometer as the resistorcomponent to provide a frequencyvariation similar to a logarithmic scale.To change this behavior, the manufacturer’sdata sheet recommends connectinga resistor network to a variableexternal voltage source. The voltageshould be stable and vary from 0 to almost3V.</p>
+<div align ="left">
+<div style ="text-align: center"><img  style="margin-left: 5px; margin-right: 5px"  style="margin-left: 5px; margin-right: 5px"  src="/wp-content/uploads/media-1155232-289234-function-generator-has-varibale-frequency-figure-1.gif"  alt="Function generator has varibale frequency figure 1"  title="Function generator has varibale frequency figure 1"  hspace="5"  width="600"  height="567" /></div>
+<p></div>
+<p> Instead of using an external voltage,the circuit described here uses an internalreference voltage of approximately3V at Pin 7 of the XR-2206. With thisinternal reference, the circuit requiresno voltage regulators—not even in thepower supply. The circuit requires apower supply with only a 12V, 500-mAcenter-tapped transformer, a bridge rectifier,and two filter capacitors (<span style ="font-weight: bold">Figure1</span> ). You can define the frequency equationsusing <span style ="font-weight: bold">Figure 2</span>  as a reference.</p>
+<div align ="left"><img  style="float: left; margin-left: 5px; margin-right: 5px"  style="float: left; margin-left: 5px; margin-right: 5px"  src="/wp-content/uploads/media-1155233-289235-function-generator-has-varibale-frequency-figure-2.gif"  alt="Function generator has varibale frequency figure 2"  title="Function generator has varibale frequency figure 2"  hspace="5"  width="350"  height="223"  align="left" />When V<sub>X</sub>  is 0V, you determine thefrequency using F=1/RC. The currenttrough, I<sub>R</sub> , equals 3/R, where 3 is thevoltage reference in Pin 7. From thisequation and resolving the reciprocal of R, you define the frequency asI<sub>R</sub> /3R=1/R, as a function of the current,F=I<sub>R</sub> /3C.</div>
+<p>When V<sub>X</sub> >0V, you define the currentas I<sub>R</sub> =(3−VX)/R. Replacing I<sub>R</sub>  from theprevious equation, you can define thefrequency as a direct function of thevoltage: F=(1/3RC)(3−V<sub>X</sub> ).</p>
+<table border ="1"  width ="150"  align ="right"  style ="border: 1px solid black; float: right; width: 150px">
+<tbody>
+<tr align ="center">
+<td style ="border: 1px solid black"> Read More<br /><a href="http://www.edn.com/designideas">Design Ideas</a></td>
+</tr>
+</tbody>
+</table>
+<p> <span style ="font-weight: bold">Figure 1</span>  shows the final circuit togenerate the waveforms. The circuit’sfrequency ranges from 1 Hz to 100 kHzin five scales. The rotary switch lets youselect the scale by switching in a set ofcapacitors.</p>
+<!-- <div><p>Small Bottom Ad</p></div> -->
+                    <!-- Place at the bottom of article content Currently not displaying -->
+		                 <!-- <p>div-gpt-ad-fluid</p> -->
+                		<div id="div-gpt-ad-native">
+                		  <script type="text/javascript">
+                			   googletag.cmd.push(function() { googletag.display('div-gpt-ad-native'); });
+                		  </script>
+                		</div>							</div><!-- end .entry-content -->
+
+			<footer class="entry-footer cf">
+									<div class="entry-tags"><span>Tags</span><a href="https://www.edn.com/tag/analog/" rel="tag">Analog</a> &bull; <a href="https://www.edn.com/tag/analog-ics/" rel="tag">Analog Ics</a> &bull; <a href="https://www.edn.com/tag/converters/" rel="tag">Converters</a> &bull; <a href="https://www.edn.com/tag/passive/" rel="tag">Passive</a> &bull; <a href="https://www.edn.com/tag/power-supplies/" rel="tag">Power Supplies</a> &bull; <a href="https://www.edn.com/tag/signal-sources/" rel="tag">Signal Sources</a> &bull; <a href="https://www.edn.com/tag/test-measurement/" rel="tag">Test &amp; Measurement</a></div>
+											<!--==== Ad Inserter Carousel Ad ======-->
+				<div id="div-gpt-ad-carousel">
+  <script type="text/javascript">
+   	googletag.cmd.push(function() { googletag.display('div-gpt-ad-carousel'); });
+  </script>
+</div>			</footer><!-- end .entry-footer -->
+
+
+
+		<!--=========== NEW ==============-->
+		
+		<!-- Displays Guest Author Name (as a hyperlink), date published, etc. After the article-->
+<!--		
+		<footer class="entry-footer">
+		</br>
+-->		
+	<!-- < ?php nikau_entry_meta(); ?> -->
+	
+	<!-- Custom entry meta for single post to properly display guest author name on single post just below title on large screens -->
+<!--	
+	Date Published: 	<hr>
+	Written by:
+		<hr>
+	Category:  <hr>
+	-->	
+	<!-- End custom meta entry -->
+	
+				
+<!--
+		</footer>
+-->		
+		<!--=============== END NEW ===============-->
+
+
+
+
+
+			
+<div id="comments" class="comments-area cf">
+  <h2 class="comments-title">
+    1 comment on &ldquo;<span>Function generator has variable frequency</span>&rdquo;  </h2>
+
+<div class="comments-content cf">
+
+  
+    <ol class="commentlist">
+      
+		<li class="comment even thread-even depth-1" id="li-comment-17973">
+			<div id="comment-17973" class="comment">
+				<div class="comment-avatar">
+					<img alt='' src='https://secure.gravatar.com/avatar/?s=80&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo avatar-default' height='80' width='80' />				</div>
+
+				<div class="comment-wrap">
+					<div class="comment-details">
+						<div class="comment-author">
+							<!--Removes Hyperlink for Date on Comments-->
+							PM-guru						</div><!-- end .comment-author -->
+						<div class="comment-meta">
+							<span class="comment-time"><!--<a href="<?//php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">-->
+								October 3, 2016<!--</a>-->
+							</span>
+							<!--END Comment Date Hyperlink Removal-->
+													</div><!-- end .comment-meta -->
+					</div><!-- end .comment-details -->
+
+					<div class="comment-text">
+						<p>&#8220;This is a pretty cleaver way of make a function generator. It is also a good way to replace the MAX038 which is now obsolete. This circuit can only output less than 8V and cannot drive high current. To increase the voltage, you may use a high-voltage func</p>
+											</div><!-- end .comment-text -->
+											<div class="comment-reply"><a href="javascript:janrain.capture.ui.modal.open();">Log in to Reply</a></div>
+									</div><!-- end .comment-wrap -->
+			</div><!-- end .comment -->
+
+			</li><!-- #comment-## -->
+    </ol><!-- end .comment-list -->
+
+    
+    
+  
+  	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/function-generator-has-variable-frequency/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">
+				You must <a href="javascript:janrain.capture.ui.modal.open();" onclick="janrain.capture.ui.endCaptureSession();">Register</a> or
+				<a href="javascript:janrain.capture.ui.modal.open();" onclick="janrain.capture.ui.endCaptureSession();">Login</a> to post a comment.</p>	</div><!-- #respond -->
+	
+  </div><!-- end .comments-content -->
+</div><!-- end #comments .comments-area -->
+
+			
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://www.edn.com/what-the-ibm-watson-jeopardy-matchup-really-tells-us/" rel="prev"><span class="meta-nav">Previous Post</span> </a></div><div class="nav-next"><a href="https://www.edn.com/edn-2010-innovation-award-finalistsare-you-inspired/" rel="next"><span class="meta-nav">Next Post</span> </a></div></div>
+	</nav>
+		</div><!-- end #socialicons-sticky -->
+		
+	</div><!-- end .content-wrap -->
+
+</article><!-- end post -4364021 -->
+
+	
+	
+<aside id="secondary" class="sidebar widget-area" role="complementary">
+	<section id="eu_cookie_law_widget-2" class="widget widget_eu_cookie_law_widget"><div
+	class="hide-on-button negative"
+	data-hide-timeout="30"
+	data-consent-expiration="180"
+	id="eu-cookie-law"
+>
+	<form method="post">
+		<input type="submit" value="Close and accept" class="accept" />
+	</form>
+
+	This website uses cookies. By continuing to browse it, you are agreeing to our use of cookies
+	<a href="https://aspencore.com/privacy-policy/" >
+		More info	</a>
+</div>
+</section><section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!-- Top Sidebar -->
+<div id="SideBarWrap">
+	<div id="div-gpt-ad-medium-rectangle">
+	<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-medium-rectangle'); });
+	</script>
+	</div>
+<p>Advertisement</p>
+</div><!--END #SideBarWrap--></div></section><section id="custom_html-7" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!--Partner Content iframe-->
+<iframe src="https://api.aspencore.com/syndication/v1/partnered-content/" width="300" height="500" frameborder="0" scrolling="no"></iframe></div></section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+											<li>
+					<a href="https://www.edn.com/teardown-voice-activated-wi-fi-connected-dimmer-switch/">Teardown: Voice-activated, Wi-Fi-connected dimmer switch</a>
+									</li>
+											<li>
+					<a href="https://www.edn.com/wireless-accelerometer-leverages-lorawan/">Wireless accelerometer leverages LoRaWAN</a>
+									</li>
+											<li>
+					<a href="https://www.edn.com/switcher-ics-pack-750-v-gan-transistors/">Switcher ICs pack 750-V GaN transistors</a>
+									</li>
+											<li>
+					<a href="https://www.edn.com/5g-testing-modulation-distortion-method-speeds-power-amplifier-characterization/">5G testing: Modulation distortion method speeds power amplifier characterization</a>
+									</li>
+											<li>
+					<a href="https://www.edn.com/use-a-low-cost-noise-source-as-a-replacement-for-a-tracking-generator/">Use a low-cost noise source as a replacement for a tracking generator</a>
+									</li>
+					</ul>
+		</section><section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">Recent Comments</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Evariste</span> on <a href="https://www.edn.com/does-your-spacecraft-flash-part-2-introducing-the-rt-polarfire-fpga/#comment-27440">Does your spacecraft flash? Part 2: Introducing the RT PolarFire FPGA</a></li><li class="recentcomments"><span class="comment-author-link">bradstew</span> on <a href="https://www.edn.com/make-sense-of-antenna-design-and-matching-networks/#comment-27439">Make sense of antenna design and matching networks</a></li><li class="recentcomments"><span class="comment-author-link">Konstantin Kim</span> on <a href="https://www.edn.com/wireless-accelerometer-leverages-lorawan/#comment-27437">Wireless accelerometer leverages LoRaWAN</a></li><li class="recentcomments"><span class="comment-author-link">Ariel Quintero</span> on <a href="https://www.edn.com/instrumentation-amplifier-input-circuit-strategies/#comment-27433">Instrumentation amplifier input-circuit strategies</a></li><li class="recentcomments"><span class="comment-author-link">John Dunn</span> on <a href="https://www.edn.com/making-measurements-with-your-minds-eye/#comment-27432">Making measurements with your mind&#8217;s eye</a></li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">Archives</h2>		<label class="screen-reader-text" for="archives-dropdown-2">Archives</label>
+		<select id="archives-dropdown-2" name="archive-dropdown">
+			
+			<option value="">Select Month</option>
+				<option value='https://www.edn.com/2020/04/'> April 2020 </option>
+	<option value='https://www.edn.com/2020/03/'> March 2020 </option>
+	<option value='https://www.edn.com/2020/02/'> February 2020 </option>
+	<option value='https://www.edn.com/2020/01/'> January 2020 </option>
+	<option value='https://www.edn.com/2019/12/'> December 2019 </option>
+	<option value='https://www.edn.com/2019/11/'> November 2019 </option>
+	<option value='https://www.edn.com/2019/10/'> October 2019 </option>
+	<option value='https://www.edn.com/2019/09/'> September 2019 </option>
+	<option value='https://www.edn.com/2019/08/'> August 2019 </option>
+	<option value='https://www.edn.com/2019/07/'> July 2019 </option>
+	<option value='https://www.edn.com/2019/06/'> June 2019 </option>
+	<option value='https://www.edn.com/2019/05/'> May 2019 </option>
+	<option value='https://www.edn.com/2019/04/'> April 2019 </option>
+	<option value='https://www.edn.com/2019/03/'> March 2019 </option>
+	<option value='https://www.edn.com/2019/02/'> February 2019 </option>
+	<option value='https://www.edn.com/2019/01/'> January 2019 </option>
+	<option value='https://www.edn.com/2018/12/'> December 2018 </option>
+	<option value='https://www.edn.com/2018/11/'> November 2018 </option>
+	<option value='https://www.edn.com/2018/10/'> October 2018 </option>
+	<option value='https://www.edn.com/2018/09/'> September 2018 </option>
+	<option value='https://www.edn.com/2018/08/'> August 2018 </option>
+	<option value='https://www.edn.com/2018/07/'> July 2018 </option>
+	<option value='https://www.edn.com/2018/06/'> June 2018 </option>
+	<option value='https://www.edn.com/2018/05/'> May 2018 </option>
+	<option value='https://www.edn.com/2018/04/'> April 2018 </option>
+	<option value='https://www.edn.com/2018/03/'> March 2018 </option>
+	<option value='https://www.edn.com/2018/02/'> February 2018 </option>
+	<option value='https://www.edn.com/2018/01/'> January 2018 </option>
+	<option value='https://www.edn.com/2017/12/'> December 2017 </option>
+	<option value='https://www.edn.com/2017/11/'> November 2017 </option>
+	<option value='https://www.edn.com/2017/10/'> October 2017 </option>
+	<option value='https://www.edn.com/2017/09/'> September 2017 </option>
+	<option value='https://www.edn.com/2017/08/'> August 2017 </option>
+	<option value='https://www.edn.com/2017/07/'> July 2017 </option>
+	<option value='https://www.edn.com/2017/06/'> June 2017 </option>
+	<option value='https://www.edn.com/2017/05/'> May 2017 </option>
+	<option value='https://www.edn.com/2017/04/'> April 2017 </option>
+	<option value='https://www.edn.com/2017/03/'> March 2017 </option>
+	<option value='https://www.edn.com/2017/02/'> February 2017 </option>
+	<option value='https://www.edn.com/2017/01/'> January 2017 </option>
+	<option value='https://www.edn.com/2016/12/'> December 2016 </option>
+	<option value='https://www.edn.com/2016/11/'> November 2016 </option>
+	<option value='https://www.edn.com/2016/10/'> October 2016 </option>
+	<option value='https://www.edn.com/2016/09/'> September 2016 </option>
+	<option value='https://www.edn.com/2016/08/'> August 2016 </option>
+	<option value='https://www.edn.com/2016/07/'> July 2016 </option>
+	<option value='https://www.edn.com/2016/06/'> June 2016 </option>
+	<option value='https://www.edn.com/2016/05/'> May 2016 </option>
+	<option value='https://www.edn.com/2016/04/'> April 2016 </option>
+	<option value='https://www.edn.com/2016/03/'> March 2016 </option>
+	<option value='https://www.edn.com/2016/02/'> February 2016 </option>
+	<option value='https://www.edn.com/2016/01/'> January 2016 </option>
+	<option value='https://www.edn.com/2015/12/'> December 2015 </option>
+	<option value='https://www.edn.com/2015/11/'> November 2015 </option>
+	<option value='https://www.edn.com/2015/10/'> October 2015 </option>
+	<option value='https://www.edn.com/2015/09/'> September 2015 </option>
+	<option value='https://www.edn.com/2015/08/'> August 2015 </option>
+	<option value='https://www.edn.com/2015/07/'> July 2015 </option>
+	<option value='https://www.edn.com/2015/06/'> June 2015 </option>
+	<option value='https://www.edn.com/2015/05/'> May 2015 </option>
+	<option value='https://www.edn.com/2015/04/'> April 2015 </option>
+	<option value='https://www.edn.com/2015/03/'> March 2015 </option>
+	<option value='https://www.edn.com/2015/02/'> February 2015 </option>
+	<option value='https://www.edn.com/2015/01/'> January 2015 </option>
+	<option value='https://www.edn.com/2014/12/'> December 2014 </option>
+	<option value='https://www.edn.com/2014/11/'> November 2014 </option>
+	<option value='https://www.edn.com/2014/10/'> October 2014 </option>
+	<option value='https://www.edn.com/2014/09/'> September 2014 </option>
+	<option value='https://www.edn.com/2014/08/'> August 2014 </option>
+	<option value='https://www.edn.com/2014/07/'> July 2014 </option>
+	<option value='https://www.edn.com/2014/06/'> June 2014 </option>
+	<option value='https://www.edn.com/2014/05/'> May 2014 </option>
+	<option value='https://www.edn.com/2014/04/'> April 2014 </option>
+	<option value='https://www.edn.com/2014/03/'> March 2014 </option>
+	<option value='https://www.edn.com/2014/02/'> February 2014 </option>
+	<option value='https://www.edn.com/2014/01/'> January 2014 </option>
+	<option value='https://www.edn.com/2013/12/'> December 2013 </option>
+	<option value='https://www.edn.com/2013/11/'> November 2013 </option>
+	<option value='https://www.edn.com/2013/10/'> October 2013 </option>
+	<option value='https://www.edn.com/2013/09/'> September 2013 </option>
+	<option value='https://www.edn.com/2013/08/'> August 2013 </option>
+	<option value='https://www.edn.com/2013/07/'> July 2013 </option>
+	<option value='https://www.edn.com/2013/06/'> June 2013 </option>
+	<option value='https://www.edn.com/2013/05/'> May 2013 </option>
+	<option value='https://www.edn.com/2013/04/'> April 2013 </option>
+	<option value='https://www.edn.com/2013/03/'> March 2013 </option>
+	<option value='https://www.edn.com/2013/02/'> February 2013 </option>
+	<option value='https://www.edn.com/2013/01/'> January 2013 </option>
+	<option value='https://www.edn.com/2012/12/'> December 2012 </option>
+	<option value='https://www.edn.com/2012/11/'> November 2012 </option>
+	<option value='https://www.edn.com/2012/10/'> October 2012 </option>
+	<option value='https://www.edn.com/2012/09/'> September 2012 </option>
+	<option value='https://www.edn.com/2012/08/'> August 2012 </option>
+	<option value='https://www.edn.com/2012/07/'> July 2012 </option>
+	<option value='https://www.edn.com/2012/06/'> June 2012 </option>
+	<option value='https://www.edn.com/2012/05/'> May 2012 </option>
+	<option value='https://www.edn.com/2012/04/'> April 2012 </option>
+	<option value='https://www.edn.com/2012/03/'> March 2012 </option>
+	<option value='https://www.edn.com/2012/02/'> February 2012 </option>
+	<option value='https://www.edn.com/2012/01/'> January 2012 </option>
+	<option value='https://www.edn.com/2011/12/'> December 2011 </option>
+	<option value='https://www.edn.com/2011/11/'> November 2011 </option>
+	<option value='https://www.edn.com/2011/10/'> October 2011 </option>
+	<option value='https://www.edn.com/2011/09/'> September 2011 </option>
+	<option value='https://www.edn.com/2011/08/'> August 2011 </option>
+	<option value='https://www.edn.com/2011/07/'> July 2011 </option>
+	<option value='https://www.edn.com/2011/06/'> June 2011 </option>
+	<option value='https://www.edn.com/2011/05/'> May 2011 </option>
+	<option value='https://www.edn.com/2011/04/'> April 2011 </option>
+	<option value='https://www.edn.com/2011/03/'> March 2011 </option>
+	<option value='https://www.edn.com/2011/02/'> February 2011 </option>
+	<option value='https://www.edn.com/2011/01/'> January 2011 </option>
+	<option value='https://www.edn.com/2010/12/'> December 2010 </option>
+	<option value='https://www.edn.com/2010/11/'> November 2010 </option>
+	<option value='https://www.edn.com/2010/10/'> October 2010 </option>
+	<option value='https://www.edn.com/2010/09/'> September 2010 </option>
+	<option value='https://www.edn.com/2010/08/'> August 2010 </option>
+	<option value='https://www.edn.com/2010/07/'> July 2010 </option>
+	<option value='https://www.edn.com/2010/06/'> June 2010 </option>
+	<option value='https://www.edn.com/2010/05/'> May 2010 </option>
+	<option value='https://www.edn.com/2010/04/'> April 2010 </option>
+	<option value='https://www.edn.com/2010/03/'> March 2010 </option>
+	<option value='https://www.edn.com/2010/02/'> February 2010 </option>
+	<option value='https://www.edn.com/2010/01/'> January 2010 </option>
+	<option value='https://www.edn.com/2009/12/'> December 2009 </option>
+	<option value='https://www.edn.com/2009/11/'> November 2009 </option>
+	<option value='https://www.edn.com/2009/10/'> October 2009 </option>
+	<option value='https://www.edn.com/2009/09/'> September 2009 </option>
+	<option value='https://www.edn.com/2009/08/'> August 2009 </option>
+	<option value='https://www.edn.com/2009/07/'> July 2009 </option>
+	<option value='https://www.edn.com/2009/06/'> June 2009 </option>
+	<option value='https://www.edn.com/2009/05/'> May 2009 </option>
+	<option value='https://www.edn.com/2009/04/'> April 2009 </option>
+	<option value='https://www.edn.com/2009/03/'> March 2009 </option>
+	<option value='https://www.edn.com/2009/02/'> February 2009 </option>
+	<option value='https://www.edn.com/2009/01/'> January 2009 </option>
+	<option value='https://www.edn.com/2008/12/'> December 2008 </option>
+	<option value='https://www.edn.com/2008/11/'> November 2008 </option>
+	<option value='https://www.edn.com/2008/10/'> October 2008 </option>
+	<option value='https://www.edn.com/2008/09/'> September 2008 </option>
+	<option value='https://www.edn.com/2008/08/'> August 2008 </option>
+	<option value='https://www.edn.com/2008/07/'> July 2008 </option>
+	<option value='https://www.edn.com/2008/06/'> June 2008 </option>
+	<option value='https://www.edn.com/2008/05/'> May 2008 </option>
+	<option value='https://www.edn.com/2008/04/'> April 2008 </option>
+	<option value='https://www.edn.com/2008/03/'> March 2008 </option>
+	<option value='https://www.edn.com/2008/02/'> February 2008 </option>
+	<option value='https://www.edn.com/2008/01/'> January 2008 </option>
+	<option value='https://www.edn.com/2007/12/'> December 2007 </option>
+	<option value='https://www.edn.com/2007/11/'> November 2007 </option>
+	<option value='https://www.edn.com/2007/10/'> October 2007 </option>
+	<option value='https://www.edn.com/2007/09/'> September 2007 </option>
+	<option value='https://www.edn.com/2007/08/'> August 2007 </option>
+	<option value='https://www.edn.com/2007/07/'> July 2007 </option>
+	<option value='https://www.edn.com/2007/06/'> June 2007 </option>
+	<option value='https://www.edn.com/2007/05/'> May 2007 </option>
+	<option value='https://www.edn.com/2007/04/'> April 2007 </option>
+	<option value='https://www.edn.com/2007/03/'> March 2007 </option>
+	<option value='https://www.edn.com/2007/02/'> February 2007 </option>
+	<option value='https://www.edn.com/2007/01/'> January 2007 </option>
+	<option value='https://www.edn.com/2006/12/'> December 2006 </option>
+	<option value='https://www.edn.com/2006/11/'> November 2006 </option>
+	<option value='https://www.edn.com/2006/10/'> October 2006 </option>
+	<option value='https://www.edn.com/2006/09/'> September 2006 </option>
+	<option value='https://www.edn.com/2006/08/'> August 2006 </option>
+	<option value='https://www.edn.com/2006/07/'> July 2006 </option>
+	<option value='https://www.edn.com/2006/06/'> June 2006 </option>
+	<option value='https://www.edn.com/2006/05/'> May 2006 </option>
+	<option value='https://www.edn.com/2006/04/'> April 2006 </option>
+	<option value='https://www.edn.com/2006/03/'> March 2006 </option>
+	<option value='https://www.edn.com/2006/02/'> February 2006 </option>
+	<option value='https://www.edn.com/2006/01/'> January 2006 </option>
+	<option value='https://www.edn.com/2005/12/'> December 2005 </option>
+	<option value='https://www.edn.com/2005/11/'> November 2005 </option>
+	<option value='https://www.edn.com/2005/10/'> October 2005 </option>
+	<option value='https://www.edn.com/2005/09/'> September 2005 </option>
+	<option value='https://www.edn.com/2005/08/'> August 2005 </option>
+	<option value='https://www.edn.com/2005/07/'> July 2005 </option>
+	<option value='https://www.edn.com/2005/06/'> June 2005 </option>
+	<option value='https://www.edn.com/2005/05/'> May 2005 </option>
+	<option value='https://www.edn.com/2005/04/'> April 2005 </option>
+	<option value='https://www.edn.com/2005/03/'> March 2005 </option>
+	<option value='https://www.edn.com/2005/02/'> February 2005 </option>
+	<option value='https://www.edn.com/2005/01/'> January 2005 </option>
+	<option value='https://www.edn.com/2004/12/'> December 2004 </option>
+	<option value='https://www.edn.com/2004/11/'> November 2004 </option>
+	<option value='https://www.edn.com/2004/10/'> October 2004 </option>
+	<option value='https://www.edn.com/2004/09/'> September 2004 </option>
+	<option value='https://www.edn.com/2004/08/'> August 2004 </option>
+	<option value='https://www.edn.com/2004/07/'> July 2004 </option>
+	<option value='https://www.edn.com/2004/06/'> June 2004 </option>
+	<option value='https://www.edn.com/2004/05/'> May 2004 </option>
+	<option value='https://www.edn.com/2004/04/'> April 2004 </option>
+	<option value='https://www.edn.com/2004/03/'> March 2004 </option>
+	<option value='https://www.edn.com/2004/02/'> February 2004 </option>
+	<option value='https://www.edn.com/2004/01/'> January 2004 </option>
+	<option value='https://www.edn.com/2003/12/'> December 2003 </option>
+	<option value='https://www.edn.com/2003/11/'> November 2003 </option>
+	<option value='https://www.edn.com/2003/10/'> October 2003 </option>
+	<option value='https://www.edn.com/2003/09/'> September 2003 </option>
+	<option value='https://www.edn.com/2003/08/'> August 2003 </option>
+	<option value='https://www.edn.com/2003/07/'> July 2003 </option>
+	<option value='https://www.edn.com/2003/06/'> June 2003 </option>
+	<option value='https://www.edn.com/2003/05/'> May 2003 </option>
+	<option value='https://www.edn.com/2003/04/'> April 2003 </option>
+	<option value='https://www.edn.com/2003/03/'> March 2003 </option>
+	<option value='https://www.edn.com/2003/02/'> February 2003 </option>
+	<option value='https://www.edn.com/2003/01/'> January 2003 </option>
+	<option value='https://www.edn.com/2002/12/'> December 2002 </option>
+	<option value='https://www.edn.com/2002/11/'> November 2002 </option>
+	<option value='https://www.edn.com/2002/10/'> October 2002 </option>
+	<option value='https://www.edn.com/2002/09/'> September 2002 </option>
+	<option value='https://www.edn.com/2002/08/'> August 2002 </option>
+	<option value='https://www.edn.com/2002/07/'> July 2002 </option>
+	<option value='https://www.edn.com/2002/06/'> June 2002 </option>
+	<option value='https://www.edn.com/2002/05/'> May 2002 </option>
+	<option value='https://www.edn.com/2002/04/'> April 2002 </option>
+	<option value='https://www.edn.com/2002/03/'> March 2002 </option>
+	<option value='https://www.edn.com/2002/02/'> February 2002 </option>
+	<option value='https://www.edn.com/2002/01/'> January 2002 </option>
+	<option value='https://www.edn.com/2001/12/'> December 2001 </option>
+	<option value='https://www.edn.com/2001/11/'> November 2001 </option>
+	<option value='https://www.edn.com/2001/10/'> October 2001 </option>
+	<option value='https://www.edn.com/2001/09/'> September 2001 </option>
+	<option value='https://www.edn.com/2001/08/'> August 2001 </option>
+	<option value='https://www.edn.com/2001/07/'> July 2001 </option>
+	<option value='https://www.edn.com/2001/06/'> June 2001 </option>
+	<option value='https://www.edn.com/2001/05/'> May 2001 </option>
+	<option value='https://www.edn.com/2001/04/'> April 2001 </option>
+	<option value='https://www.edn.com/2001/03/'> March 2001 </option>
+	<option value='https://www.edn.com/2001/02/'> February 2001 </option>
+	<option value='https://www.edn.com/2001/01/'> January 2001 </option>
+	<option value='https://www.edn.com/2000/12/'> December 2000 </option>
+	<option value='https://www.edn.com/2000/11/'> November 2000 </option>
+	<option value='https://www.edn.com/2000/10/'> October 2000 </option>
+	<option value='https://www.edn.com/2000/09/'> September 2000 </option>
+	<option value='https://www.edn.com/2000/08/'> August 2000 </option>
+	<option value='https://www.edn.com/2000/07/'> July 2000 </option>
+	<option value='https://www.edn.com/2000/06/'> June 2000 </option>
+	<option value='https://www.edn.com/2000/05/'> May 2000 </option>
+	<option value='https://www.edn.com/2000/04/'> April 2000 </option>
+	<option value='https://www.edn.com/2000/03/'> March 2000 </option>
+	<option value='https://www.edn.com/2000/02/'> February 2000 </option>
+	<option value='https://www.edn.com/2000/01/'> January 2000 </option>
+	<option value='https://www.edn.com/1999/12/'> December 1999 </option>
+	<option value='https://www.edn.com/1999/11/'> November 1999 </option>
+	<option value='https://www.edn.com/1999/10/'> October 1999 </option>
+	<option value='https://www.edn.com/1999/09/'> September 1999 </option>
+	<option value='https://www.edn.com/1999/08/'> August 1999 </option>
+	<option value='https://www.edn.com/1999/07/'> July 1999 </option>
+	<option value='https://www.edn.com/1999/06/'> June 1999 </option>
+	<option value='https://www.edn.com/1999/05/'> May 1999 </option>
+	<option value='https://www.edn.com/1999/04/'> April 1999 </option>
+	<option value='https://www.edn.com/1999/03/'> March 1999 </option>
+	<option value='https://www.edn.com/1999/02/'> February 1999 </option>
+	<option value='https://www.edn.com/1999/01/'> January 1999 </option>
+	<option value='https://www.edn.com/1998/12/'> December 1998 </option>
+	<option value='https://www.edn.com/1998/11/'> November 1998 </option>
+	<option value='https://www.edn.com/1998/10/'> October 1998 </option>
+	<option value='https://www.edn.com/1998/09/'> September 1998 </option>
+	<option value='https://www.edn.com/1998/08/'> August 1998 </option>
+	<option value='https://www.edn.com/1998/07/'> July 1998 </option>
+	<option value='https://www.edn.com/1998/06/'> June 1998 </option>
+	<option value='https://www.edn.com/1998/05/'> May 1998 </option>
+	<option value='https://www.edn.com/1998/04/'> April 1998 </option>
+	<option value='https://www.edn.com/1998/03/'> March 1998 </option>
+	<option value='https://www.edn.com/1998/02/'> February 1998 </option>
+	<option value='https://www.edn.com/1998/01/'> January 1998 </option>
+	<option value='https://www.edn.com/1997/12/'> December 1997 </option>
+	<option value='https://www.edn.com/1997/11/'> November 1997 </option>
+	<option value='https://www.edn.com/1997/10/'> October 1997 </option>
+	<option value='https://www.edn.com/1997/09/'> September 1997 </option>
+	<option value='https://www.edn.com/1997/08/'> August 1997 </option>
+	<option value='https://www.edn.com/1997/07/'> July 1997 </option>
+	<option value='https://www.edn.com/1997/06/'> June 1997 </option>
+	<option value='https://www.edn.com/1997/05/'> May 1997 </option>
+	<option value='https://www.edn.com/1997/04/'> April 1997 </option>
+	<option value='https://www.edn.com/1997/03/'> March 1997 </option>
+	<option value='https://www.edn.com/1997/02/'> February 1997 </option>
+	<option value='https://www.edn.com/1997/01/'> January 1997 </option>
+	<option value='https://www.edn.com/1996/12/'> December 1996 </option>
+	<option value='https://www.edn.com/1996/11/'> November 1996 </option>
+	<option value='https://www.edn.com/1996/10/'> October 1996 </option>
+	<option value='https://www.edn.com/1996/09/'> September 1996 </option>
+	<option value='https://www.edn.com/1996/08/'> August 1996 </option>
+	<option value='https://www.edn.com/1996/07/'> July 1996 </option>
+	<option value='https://www.edn.com/1996/06/'> June 1996 </option>
+	<option value='https://www.edn.com/1996/05/'> May 1996 </option>
+	<option value='https://www.edn.com/1996/04/'> April 1996 </option>
+	<option value='https://www.edn.com/1996/03/'> March 1996 </option>
+	<option value='https://www.edn.com/1996/02/'> February 1996 </option>
+	<option value='https://www.edn.com/1996/01/'> January 1996 </option>
+	<option value='https://www.edn.com/1995/12/'> December 1995 </option>
+	<option value='https://www.edn.com/1995/11/'> November 1995 </option>
+	<option value='https://www.edn.com/1995/10/'> October 1995 </option>
+	<option value='https://www.edn.com/1995/09/'> September 1995 </option>
+	<option value='https://www.edn.com/1995/08/'> August 1995 </option>
+	<option value='https://www.edn.com/1995/07/'> July 1995 </option>
+	<option value='https://www.edn.com/1995/06/'> June 1995 </option>
+	<option value='https://www.edn.com/1995/05/'> May 1995 </option>
+	<option value='https://www.edn.com/1995/04/'> April 1995 </option>
+	<option value='https://www.edn.com/1995/03/'> March 1995 </option>
+	<option value='https://www.edn.com/1995/02/'> February 1995 </option>
+	<option value='https://www.edn.com/1995/01/'> January 1995 </option>
+	<option value='https://www.edn.com/1994/12/'> December 1994 </option>
+	<option value='https://www.edn.com/1994/11/'> November 1994 </option>
+	<option value='https://www.edn.com/1994/10/'> October 1994 </option>
+	<option value='https://www.edn.com/1994/09/'> September 1994 </option>
+	<option value='https://www.edn.com/1994/08/'> August 1994 </option>
+	<option value='https://www.edn.com/1994/07/'> July 1994 </option>
+	<option value='https://www.edn.com/1994/06/'> June 1994 </option>
+	<option value='https://www.edn.com/1994/05/'> May 1994 </option>
+	<option value='https://www.edn.com/1994/04/'> April 1994 </option>
+	<option value='https://www.edn.com/1994/03/'> March 1994 </option>
+	<option value='https://www.edn.com/1994/02/'> February 1994 </option>
+	<option value='https://www.edn.com/1994/01/'> January 1994 </option>
+	<option value='https://www.edn.com/1993/11/'> November 1993 </option>
+	<option value='https://www.edn.com/1993/03/'> March 1993 </option>
+	<option value='https://www.edn.com/1992/10/'> October 1992 </option>
+	<option value='https://www.edn.com/1992/09/'> September 1992 </option>
+	<option value='https://www.edn.com/1989/08/'> August 1989 </option>
+	<option value='https://www.edn.com/1988/10/'> October 1988 </option>
+	<option value='https://www.edn.com/1988/05/'> May 1988 </option>
+	<option value='https://www.edn.com/1988/04/'> April 1988 </option>
+	<option value='https://www.edn.com/1986/05/'> May 1986 </option>
+	<option value='https://www.edn.com/1986/02/'> February 1986 </option>
+	<option value='https://www.edn.com/1985/04/'> April 1985 </option>
+	<option value='https://www.edn.com/1984/05/'> May 1984 </option>
+	<option value='https://www.edn.com/1983/02/'> February 1983 </option>
+	<option value='https://www.edn.com/1982/07/'> July 1982 </option>
+	<option value='https://www.edn.com/1981/10/'> October 1981 </option>
+	<option value='https://www.edn.com/1981/09/'> September 1981 </option>
+	<option value='https://www.edn.com/1981/03/'> March 1981 </option>
+	<option value='https://www.edn.com/1980/04/'> April 1980 </option>
+	<option value='https://www.edn.com/1979/10/'> October 1979 </option>
+	<option value='https://www.edn.com/1976/07/'> July 1976 </option>
+	<option value='https://www.edn.com/1975/06/'> June 1975 </option>
+	<option value='https://www.edn.com/1975/05/'> May 1975 </option>
+	<option value='https://www.edn.com/1975/01/'> January 1975 </option>
+	<option value='https://www.edn.com/1972/09/'> September 1972 </option>
+	<option value='https://www.edn.com/1972/05/'> May 1972 </option>
+	<option value='https://www.edn.com/1972/01/'> January 1972 </option>
+	<option value='https://www.edn.com/1970/04/'> April 1970 </option>
+	<option value='https://www.edn.com/1970/01/'> January 1970 </option>
+	<option value='https://www.edn.com/1969/12/'> December 1969 </option>
+	<option value='https://www.edn.com/1969/09/'> September 1969 </option>
+	<option value='https://www.edn.com/1968/06/'> June 1968 </option>
+	<option value='https://www.edn.com/1960/10/'> October 1960 </option>
+	<option value='https://www.edn.com/1958/09/'> September 1958 </option>
+	<option value='https://www.edn.com/1956/11/'> November 1956 </option>
+
+		</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-2" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2><form action="https://www.edn.com" method="get"><label class="screen-reader-text" for="cat">Categories</label><select  name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="4617">Blogs</option>
+	<option class="level-1" value="5038">&nbsp;&nbsp;&nbsp;20-20kHz</option>
+	<option class="level-1" value="4992">&nbsp;&nbsp;&nbsp;5G Standards Watch</option>
+	<option class="level-1" value="4964">&nbsp;&nbsp;&nbsp;5G Waves</option>
+	<option class="level-1" value="5044">&nbsp;&nbsp;&nbsp;A Ham&#8217;s Eye View blog</option>
+	<option class="level-1" value="4991">&nbsp;&nbsp;&nbsp;Absolute EDA</option>
+	<option class="level-1" value="5057">&nbsp;&nbsp;&nbsp;Across_the_Board</option>
+	<option class="level-1" value="4987">&nbsp;&nbsp;&nbsp;All_Aboard</option>
+	<option class="level-1" value="4814">&nbsp;&nbsp;&nbsp;Amateur and ham radio</option>
+	<option class="level-1" value="4815">&nbsp;&nbsp;&nbsp;Anablog</option>
+	<option class="level-1" value="4978">&nbsp;&nbsp;&nbsp;Analog bytes</option>
+	<option class="level-1" value="5046">&nbsp;&nbsp;&nbsp;Analog Fundamentals</option>
+	<option class="level-1" value="5049">&nbsp;&nbsp;&nbsp;Analog great Bob Pease</option>
+	<option class="level-1" value="5069">&nbsp;&nbsp;&nbsp;Analog IC Startup blog</option>
+	<option class="level-1" value="4972">&nbsp;&nbsp;&nbsp;APEC: The Applied Power Electronics Conference</option>
+	<option class="level-1" value="4829">&nbsp;&nbsp;&nbsp;Apple teardown and analysis collection</option>
+	<option class="level-1" value="5040">&nbsp;&nbsp;&nbsp;ARM TechCon 2013</option>
+	<option class="level-1" value="5062">&nbsp;&nbsp;&nbsp;Around the Circuit</option>
+	<option class="level-1" value="4868">&nbsp;&nbsp;&nbsp;Audio DesignLine Blog</option>
+	<option class="level-1" value="5042">&nbsp;&nbsp;&nbsp;Automated Test</option>
+	<option class="level-1" value="5054">&nbsp;&nbsp;&nbsp;Automotive Currents</option>
+	<option class="level-1" value="4885">&nbsp;&nbsp;&nbsp;Automotive DesignLine Blog</option>
+	<option class="level-1" value="5034">&nbsp;&nbsp;&nbsp;Automotive Innovation</option>
+	<option class="level-1" value="4652">&nbsp;&nbsp;&nbsp;Baker&#8217;s Best</option>
+	<option class="level-1" value="4983">&nbsp;&nbsp;&nbsp;BenchTalk</option>
+	<option class="level-1" value="4917">&nbsp;&nbsp;&nbsp;BeTheSignal</option>
+	<option class="level-1" value="5030">&nbsp;&nbsp;&nbsp;Beyond Bits and Bytes</option>
+	<option class="level-1" value="5063">&nbsp;&nbsp;&nbsp;Bogatin&#8217;s Rules of Thumb</option>
+	<option class="level-1" value="4624">&nbsp;&nbsp;&nbsp;Brian&#8217;s Brain</option>
+	<option class="level-1" value="4980">&nbsp;&nbsp;&nbsp;Brianwaves</option>
+	<option class="level-1" value="5121">&nbsp;&nbsp;&nbsp;Calibration and metrology</option>
+	<option class="level-1" value="5014">&nbsp;&nbsp;&nbsp;Catching Waves</option>
+	<option class="level-1" value="5032">&nbsp;&nbsp;&nbsp;Celebrating women&#8217;s history</option>
+	<option class="level-1" value="5036">&nbsp;&nbsp;&nbsp;CES 2014</option>
+	<option class="level-1" value="5090">&nbsp;&nbsp;&nbsp;Connecting Wireless</option>
+	<option class="level-1" value="4819">&nbsp;&nbsp;&nbsp;Critical Links</option>
+	<option class="level-1" value="5112">&nbsp;&nbsp;&nbsp;Data acquisition</option>
+	<option class="level-1" value="5051">&nbsp;&nbsp;&nbsp;Dave&#8217;s power trips</option>
+	<option class="level-1" value="4984">&nbsp;&nbsp;&nbsp;Day in the Life of a Chip Designer</option>
+	<option class="level-1" value="4841">&nbsp;&nbsp;&nbsp;Design Contests &amp; Competitions</option>
+	<option class="level-1" value="4807">&nbsp;&nbsp;&nbsp;Design Cycle</option>
+	<option class="level-1" value="5006">&nbsp;&nbsp;&nbsp;Design Rx</option>
+	<option class="level-1" value="5085">&nbsp;&nbsp;&nbsp;DESIGN West 2013</option>
+	<option class="level-1" value="5013">&nbsp;&nbsp;&nbsp;DesignCon 2014</option>
+	<option class="level-1" value="5002">&nbsp;&nbsp;&nbsp;DesignCon Blog</option>
+	<option class="level-1" value="4816">&nbsp;&nbsp;&nbsp;Designing Ideas</option>
+	<option class="level-1" value="5081">&nbsp;&nbsp;&nbsp;Designing with LEDs</option>
+	<option class="level-1" value="4831">&nbsp;&nbsp;&nbsp;DEV-monkey blog</option>
+	<option class="level-1" value="4911">&nbsp;&nbsp;&nbsp;Dew Point</option>
+	<option class="level-1" value="4944">&nbsp;&nbsp;&nbsp;Digital Home DesignLine Blog</option>
+	<option class="level-1" value="5031">&nbsp;&nbsp;&nbsp;Digital Power System Design blog</option>
+	<option class="level-1" value="5010">&nbsp;&nbsp;&nbsp;DIY Zone</option>
+	<option class="level-1" value="4906">&nbsp;&nbsp;&nbsp;Do engineers like pranks?</option>
+	<option class="level-1" value="4860">&nbsp;&nbsp;&nbsp;EDA DesignLine Blog</option>
+	<option class="level-1" value="5020">&nbsp;&nbsp;&nbsp;EDA Power Up</option>
+	<option class="level-1" value="5084">&nbsp;&nbsp;&nbsp;EDN Magazine, April 2013</option>
+	<option class="level-1" value="5094">&nbsp;&nbsp;&nbsp;EDN Magazine, February 2013</option>
+	<option class="level-1" value="5095">&nbsp;&nbsp;&nbsp;EDN Magazine, January 2013</option>
+	<option class="level-1" value="5087">&nbsp;&nbsp;&nbsp;EDN Magazine, March 2013</option>
+	<option class="level-1" value="4976">&nbsp;&nbsp;&nbsp;EDN Moments</option>
+	<option class="level-1" value="5004">&nbsp;&nbsp;&nbsp;EDN&#8217;s 60th Anniversary Collection</option>
+	<option class="level-1" value="5012">&nbsp;&nbsp;&nbsp;EE Live! 2014</option>
+	<option class="level-1" value="4830">&nbsp;&nbsp;&nbsp;electronica</option>
+	<option class="level-1" value="5008">&nbsp;&nbsp;&nbsp;Embedded Basics blog</option>
+	<option class="level-1" value="4998">&nbsp;&nbsp;&nbsp;Embedded Insights</option>
+	<option class="level-1" value="4915">&nbsp;&nbsp;&nbsp;Embedded Internet Blog</option>
+	<option class="level-1" value="5082">&nbsp;&nbsp;&nbsp;Embedded Master</option>
+	<option class="level-1" value="5106">&nbsp;&nbsp;&nbsp;EMC</option>
+	<option class="level-1" value="5092">&nbsp;&nbsp;&nbsp;Energy efficiency</option>
+	<option class="level-1" value="5033">&nbsp;&nbsp;&nbsp;Energy harvesting</option>
+	<option class="level-1" value="4897">&nbsp;&nbsp;&nbsp;Engineer’s Bookshelf</option>
+	<option class="level-1" value="4679">&nbsp;&nbsp;&nbsp;Engineer’s guide to the winter holidays</option>
+	<option class="level-1" value="4894">&nbsp;&nbsp;&nbsp;Engineering Investigations</option>
+	<option class="level-1" value="4748">&nbsp;&nbsp;&nbsp;Engineering on Wheels</option>
+	<option class="level-1" value="4840">&nbsp;&nbsp;&nbsp;Engineering Pop Culture!</option>
+	<option class="level-1" value="4810">&nbsp;&nbsp;&nbsp;Engineering the Next Generation</option>
+	<option class="level-1" value="5089">&nbsp;&nbsp;&nbsp;Enlightened Insights &#8211; LEDs</option>
+	<option class="level-1" value="4820">&nbsp;&nbsp;&nbsp;Enter Name of Content</option>
+	<option class="level-1" value="4890">&nbsp;&nbsp;&nbsp;Ethernet Watch</option>
+	<option class="level-1" value="5070">&nbsp;&nbsp;&nbsp;eToons</option>
+	<option class="level-1" value="5064">&nbsp;&nbsp;&nbsp;Everyday Measurements</option>
+	<option class="level-1" value="5093">&nbsp;&nbsp;&nbsp;Exploring the AMS Universe</option>
+	<option class="level-1" value="4931">&nbsp;&nbsp;&nbsp;Extreme low power in an extreme location</option>
+	<option class="level-1" value="5000">&nbsp;&nbsp;&nbsp;Eye on Efficiency</option>
+	<option class="level-1" value="4993">&nbsp;&nbsp;&nbsp;Eye on IoT</option>
+	<option class="level-1" value="4975">&nbsp;&nbsp;&nbsp;Eye on Standards</option>
+	<option class="level-1" value="5003">&nbsp;&nbsp;&nbsp;Fabricating the Future</option>
+	<option class="level-1" value="5025">&nbsp;&nbsp;&nbsp;Formal design &amp; verification</option>
+	<option class="level-1" value="4827">&nbsp;&nbsp;&nbsp;FPGA Gurus</option>
+	<option class="level-1" value="4999">&nbsp;&nbsp;&nbsp;From the Edge</option>
+	<option class="level-1" value="4635">&nbsp;&nbsp;&nbsp;Fun with Fundamentals</option>
+	<option class="level-1" value="5027">&nbsp;&nbsp;&nbsp;Future Tech</option>
+	<option class="level-1" value="5086">&nbsp;&nbsp;&nbsp;GWizards</option>
+	<option class="level-1" value="5035">&nbsp;&nbsp;&nbsp;HackWire</option>
+	<option class="level-1" value="5104">&nbsp;&nbsp;&nbsp;Halloween projects for engineers</option>
+	<option class="level-1" value="4995">&nbsp;&nbsp;&nbsp;Happy 150th Canada</option>
+	<option class="level-1" value="4982">&nbsp;&nbsp;&nbsp;IC Designer&#8217;s Corner</option>
+	<option class="level-1" value="4996">&nbsp;&nbsp;&nbsp;Impedance measurement rescues</option>
+	<option class="level-1" value="4940">&nbsp;&nbsp;&nbsp;Industrial Control DesignLine Blog</option>
+	<option class="level-1" value="5072">&nbsp;&nbsp;&nbsp;Isolate Me!</option>
+	<option class="level-1" value="4802">&nbsp;&nbsp;&nbsp;Jim Williams contributions to EDN</option>
+	<option class="level-1" value="5096">&nbsp;&nbsp;&nbsp;La biotecnología desde el punto de vista de un médico-ingeniero</option>
+	<option class="level-1" value="4954">&nbsp;&nbsp;&nbsp;LED Diva</option>
+	<option class="level-1" value="5019">&nbsp;&nbsp;&nbsp;LED Insights</option>
+	<option class="level-1" value="4823">&nbsp;&nbsp;&nbsp;LED Zone</option>
+	<option class="level-1" value="4988">&nbsp;&nbsp;&nbsp;Let&#8217;s focus on basics</option>
+	<option class="level-1" value="4631">&nbsp;&nbsp;&nbsp;Living Analog</option>
+	<option class="level-1" value="5061">&nbsp;&nbsp;&nbsp;Looking at electronics blog</option>
+	<option class="level-1" value="5043">&nbsp;&nbsp;&nbsp;Maker Faire</option>
+	<option class="level-1" value="5119">&nbsp;&nbsp;&nbsp;Marketing &#8211; It&#8217;s a whole new ballgame</option>
+	<option class="level-1" value="4971">&nbsp;&nbsp;&nbsp;Math is</option>
+	<option class="level-1" value="4889">&nbsp;&nbsp;&nbsp;Max&#8217;s Cool Beans</option>
+	<option class="level-1" value="4979">&nbsp;&nbsp;&nbsp;Measure of Things</option>
+	<option class="level-1" value="4804">&nbsp;&nbsp;&nbsp;Mechatronics in Design</option>
+	<option class="level-1" value="4883">&nbsp;&nbsp;&nbsp;Memory Designline Blog</option>
+	<option class="level-1" value="5047">&nbsp;&nbsp;&nbsp;Mission to Mars: NASA engineering and the Red Planet</option>
+	<option class="level-1" value="5097">&nbsp;&nbsp;&nbsp;Mixed Signals</option>
+	<option class="level-1" value="4947">&nbsp;&nbsp;&nbsp;Mobile Handset DesignLine Blog</option>
+	<option class="level-1" value="5066">&nbsp;&nbsp;&nbsp;Modular instruments</option>
+	<option class="level-1" value="4825">&nbsp;&nbsp;&nbsp;NASA: Revealing the unknown to benefit all humankind</option>
+	<option class="level-1" value="4949">&nbsp;&nbsp;&nbsp;Network Systems DesignLine Blog</option>
+	<option class="level-1" value="4824">&nbsp;&nbsp;&nbsp;Nikola Tesla</option>
+	<option class="level-1" value="5098">&nbsp;&nbsp;&nbsp;Notes from an Engineer on STEM Mentoring</option>
+	<option class="level-1" value="4811">&nbsp;&nbsp;&nbsp;Now Hear This!</option>
+	<option class="level-1" value="5050">&nbsp;&nbsp;&nbsp;Open sourced</option>
+	<option class="level-1" value="4961">&nbsp;&nbsp;&nbsp;Out-of-this-World Design</option>
+	<option class="level-1" value="5029">&nbsp;&nbsp;&nbsp;Outside the box</option>
+	<option class="level-1" value="5067">&nbsp;&nbsp;&nbsp;Patent Space</option>
+	<option class="level-1" value="4935">&nbsp;&nbsp;&nbsp;Power DesignLine Blog</option>
+	<option class="level-1" value="4981">&nbsp;&nbsp;&nbsp;Power Forward</option>
+	<option class="level-1" value="4945">&nbsp;&nbsp;&nbsp;Power Management DesignLine Blog</option>
+	<option class="level-1" value="4618">&nbsp;&nbsp;&nbsp;Power Points</option>
+	<option class="level-1" value="5075">&nbsp;&nbsp;&nbsp;Power Supply Notes</option>
+	<option class="level-1" value="4963">&nbsp;&nbsp;&nbsp;Power Tips</option>
+	<option class="level-1" value="5060">&nbsp;&nbsp;&nbsp;Powering Everything</option>
+	<option class="level-1" value="4806">&nbsp;&nbsp;&nbsp;PowerSource</option>
+	<option class="level-1" value="4812">&nbsp;&nbsp;&nbsp;Practical Chip Design</option>
+	<option class="level-1" value="5071">&nbsp;&nbsp;&nbsp;Probing Matters</option>
+	<option class="level-1" value="5039">&nbsp;&nbsp;&nbsp;Product Launches and Approvals</option>
+	<option class="level-1" value="4826">&nbsp;&nbsp;&nbsp;Product Update</option>
+	<option class="level-1" value="4928">&nbsp;&nbsp;&nbsp;Productopia</option>
+	<option class="level-1" value="5080">&nbsp;&nbsp;&nbsp;Professor Memory</option>
+	<option class="level-1" value="4880">&nbsp;&nbsp;&nbsp;Programmable Logic DesignLine Blog</option>
+	<option class="level-1" value="4990">&nbsp;&nbsp;&nbsp;Publisher’s Perspective</option>
+	<option class="level-1" value="5011">&nbsp;&nbsp;&nbsp;Quantum Leap</option>
+	<option class="level-1" value="4877">&nbsp;&nbsp;&nbsp;R&amp;D ROI</option>
+	<option class="level-1" value="4893">&nbsp;&nbsp;&nbsp;Rambling &#8216;Round</option>
+	<option class="level-1" value="5017">&nbsp;&nbsp;&nbsp;Reader&#8217;s Choice 2015</option>
+	<option class="level-1" value="4822">&nbsp;&nbsp;&nbsp;Readers&#8217; Choice 2010: LEDs, creating US jobs, more</option>
+	<option class="level-1" value="4818">&nbsp;&nbsp;&nbsp;Readers&#8217; Choice 2011: Pease and Williams, LEDs, Medical electronics, more&#8230;</option>
+	<option class="level-1" value="4813">&nbsp;&nbsp;&nbsp;Readers&#8217; Choice 2012: Jokes about engineers, iPhone 5, 30 years of DSPs, more</option>
+	<option class="level-1" value="5065">&nbsp;&nbsp;&nbsp;Readers&#8217; Choice 2013: Toyota&#8217;s killer firmware, Epic Apple fails, Raspberry Pi, more</option>
+	<option class="level-1" value="4997">&nbsp;&nbsp;&nbsp;Readers&#8217; Choice 2017</option>
+	<option class="level-1" value="4985">&nbsp;&nbsp;&nbsp;Readers&#8217; Choice 2018</option>
+	<option class="level-1" value="4876">&nbsp;&nbsp;&nbsp;RF &amp; Microwave Designline Blog</option>
+	<option class="level-1" value="4946">&nbsp;&nbsp;&nbsp;RFID World Blog</option>
+	<option class="level-1" value="5118">&nbsp;&nbsp;&nbsp;RoHS and environmental compliance</option>
+	<option class="level-1" value="4955">&nbsp;&nbsp;&nbsp;Rowe&#8217;s and Columns</option>
+	<option class="level-1" value="4808">&nbsp;&nbsp;&nbsp;Scope Guru on Signal Integrity</option>
+	<option class="level-1" value="5079">&nbsp;&nbsp;&nbsp;Scope Insights</option>
+	<option class="level-1" value="5016">&nbsp;&nbsp;&nbsp;Scope Junction blogs</option>
+	<option class="level-1" value="5045">&nbsp;&nbsp;&nbsp;Scopes collection</option>
+	<option class="level-1" value="4851">&nbsp;&nbsp;&nbsp;Semi Conscious</option>
+	<option class="level-1" value="5007">&nbsp;&nbsp;&nbsp;Sensor-EE Perception</option>
+	<option class="level-1" value="4718">&nbsp;&nbsp;&nbsp;Serious Fun</option>
+	<option class="level-1" value="4967">&nbsp;&nbsp;&nbsp;SI/PI Masterclass</option>
+	<option class="level-1" value="4675">&nbsp;&nbsp;&nbsp;Signal Integrity</option>
+	<option class="level-1" value="4948">&nbsp;&nbsp;&nbsp;Signal Processing DesignLine Blog</option>
+	<option class="level-1" value="4882">&nbsp;&nbsp;&nbsp;SmartEnergy Designline Blog</option>
+	<option class="level-1" value="5015">&nbsp;&nbsp;&nbsp;Sound Bites</option>
+	<option class="level-1" value="4916">&nbsp;&nbsp;&nbsp;Space Log</option>
+	<option class="level-1" value="5024">&nbsp;&nbsp;&nbsp;Spin Cycle</option>
+	<option class="level-1" value="5108">&nbsp;&nbsp;&nbsp;Splashes from the equipment pool</option>
+	<option class="level-1" value="5103">&nbsp;&nbsp;&nbsp;SSL and Backlighting</option>
+	<option class="level-1" value="5107">&nbsp;&nbsp;&nbsp;Storage Insights</option>
+	<option class="level-1" value="5078">&nbsp;&nbsp;&nbsp;Superheroes of SoC</option>
+	<option class="level-1" value="4828">&nbsp;&nbsp;&nbsp;Supply Chain Reaction</option>
+	<option class="level-1" value="5037">&nbsp;&nbsp;&nbsp;Systems Interface</option>
+	<option class="level-1" value="5122">&nbsp;&nbsp;&nbsp;Systems overdrive blog</option>
+	<option class="level-1" value="5120">&nbsp;&nbsp;&nbsp;Taking the Measure</option>
+	<option class="level-1" value="4766">&nbsp;&nbsp;&nbsp;Tales from the Cube</option>
+	<option class="level-1" value="5005">&nbsp;&nbsp;&nbsp;Talking Things</option>
+	<option class="level-1" value="5009">&nbsp;&nbsp;&nbsp;Tech Edge</option>
+	<option class="level-1" value="4965">&nbsp;&nbsp;&nbsp;Test Cafe</option>
+	<option class="level-1" value="4677">&nbsp;&nbsp;&nbsp;Test Voices</option>
+	<option class="level-1" value="5023">&nbsp;&nbsp;&nbsp;Testing the Limits</option>
+	<option class="level-1" value="5068">&nbsp;&nbsp;&nbsp;TestTimes</option>
+	<option class="level-1" value="5041">&nbsp;&nbsp;&nbsp;The Connected Car</option>
+	<option class="level-1" value="5028">&nbsp;&nbsp;&nbsp;The Dashboard</option>
+	<option class="level-1" value="4959">&nbsp;&nbsp;&nbsp;The EMC Blog</option>
+	<option class="level-1" value="4913">&nbsp;&nbsp;&nbsp;The Entrepreneurial Engineer</option>
+	<option class="level-1" value="5091">&nbsp;&nbsp;&nbsp;The miracle of ultrasound</option>
+	<option class="level-1" value="4852">&nbsp;&nbsp;&nbsp;The Noble Profession</option>
+	<option class="level-1" value="5055">&nbsp;&nbsp;&nbsp;The Practicing Instrumentation Engineer</option>
+	<option class="level-1" value="5077">&nbsp;&nbsp;&nbsp;The signal</option>
+	<option class="level-1" value="4914">&nbsp;&nbsp;&nbsp;The Standards Game</option>
+	<option class="level-1" value="5026">&nbsp;&nbsp;&nbsp;The Workbench</option>
+	<option class="level-1" value="4977">&nbsp;&nbsp;&nbsp;The Worst Case</option>
+	<option class="level-1" value="5105">&nbsp;&nbsp;&nbsp;Time-Tested Problem Solving Tips for the NewbEE</option>
+	<option class="level-1" value="4924">&nbsp;&nbsp;&nbsp;Ultimate Screw-ups</option>
+	<option class="level-1" value="5083">&nbsp;&nbsp;&nbsp;Using EDN</option>
+	<option class="level-1" value="4950">&nbsp;&nbsp;&nbsp;Video Imaging DesignLine Blog</option>
+	<option class="level-1" value="5056">&nbsp;&nbsp;&nbsp;Video Stream</option>
+	<option class="level-1" value="5021">&nbsp;&nbsp;&nbsp;Views from a Young Electronics Engineer</option>
+	<option class="level-1" value="4809">&nbsp;&nbsp;&nbsp;Voice of the Engineer</option>
+	<option class="level-1" value="5074">&nbsp;&nbsp;&nbsp;Waveforms</option>
+	<option class="level-1" value="4951">&nbsp;&nbsp;&nbsp;WirelessNet DesignLine Blog</option>
+	<option class="level-0" value="4633">Content Group</option>
+	<option class="level-1" value="4855">&nbsp;&nbsp;&nbsp;Blog</option>
+	<option class="level-1" value="4634">&nbsp;&nbsp;&nbsp;Collection</option>
+	<option class="level-1" value="4939">&nbsp;&nbsp;&nbsp;Column</option>
+	<option class="level-1" value="5073">&nbsp;&nbsp;&nbsp;Magazine</option>
+	<option class="level-0" value="4588">Design</option>
+	<option class="level-1" value="4589">&nbsp;&nbsp;&nbsp;Design How-To</option>
+	<option class="level-1" value="4647">&nbsp;&nbsp;&nbsp;Design Ideas</option>
+	<option class="level-1" value="4930">&nbsp;&nbsp;&nbsp;Product How-To</option>
+	<option class="level-1" value="4599">&nbsp;&nbsp;&nbsp;Teardowns</option>
+	<option class="level-0" value="4973">Event</option>
+	<option class="level-1" value="4974">&nbsp;&nbsp;&nbsp;Conference</option>
+	<option class="level-1" value="5076">&nbsp;&nbsp;&nbsp;Industry Conference</option>
+	<option class="level-0" value="4919">External Content</option>
+	<option class="level-1" value="5059">&nbsp;&nbsp;&nbsp;Ad</option>
+	<option class="level-1" value="5001">&nbsp;&nbsp;&nbsp;Digital Edition</option>
+	<option class="level-1" value="4920">&nbsp;&nbsp;&nbsp;News</option>
+	<option class="level-0" value="5052">Generic Content</option>
+	<option class="level-1" value="5053">&nbsp;&nbsp;&nbsp;HTML Blob</option>
+	<option class="level-0" value="4656">News</option>
+	<option class="level-1" value="4922">&nbsp;&nbsp;&nbsp;Analysis</option>
+	<option class="level-1" value="4937">&nbsp;&nbsp;&nbsp;Case History</option>
+	<option class="level-1" value="4942">&nbsp;&nbsp;&nbsp;Company Profile</option>
+	<option class="level-1" value="4918">&nbsp;&nbsp;&nbsp;News</option>
+	<option class="level-1" value="4657">&nbsp;&nbsp;&nbsp;News Archive</option>
+	<option class="level-1" value="4923">&nbsp;&nbsp;&nbsp;Opinion</option>
+	<option class="level-1" value="4943">&nbsp;&nbsp;&nbsp;Point-Counterpoint</option>
+	<option class="level-1" value="4921">&nbsp;&nbsp;&nbsp;Product Brief</option>
+	<option class="level-1" value="4925">&nbsp;&nbsp;&nbsp;Research</option>
+	<option class="level-1" value="4938">&nbsp;&nbsp;&nbsp;Special Report</option>
+	<option class="level-1" value="4941">&nbsp;&nbsp;&nbsp;Survey</option>
+	<option class="level-0" value="4577">Product</option>
+	<option class="level-1" value="4936">&nbsp;&nbsp;&nbsp;Comparative Table</option>
+	<option class="level-1" value="4805">&nbsp;&nbsp;&nbsp;Press Release</option>
+	<option class="level-1" value="5088">&nbsp;&nbsp;&nbsp;Product Announcement</option>
+	<option class="level-1" value="4578">&nbsp;&nbsp;&nbsp;Product Brief</option>
+	<option class="level-1" value="4767">&nbsp;&nbsp;&nbsp;Product Review</option>
+	<option class="level-1" value="4929">&nbsp;&nbsp;&nbsp;Vendor Product</option>
+	<option class="level-0" value="5100">Source Code</option>
+	<option class="level-1" value="5101">&nbsp;&nbsp;&nbsp;Source Code</option>
+	<option class="level-0" value="4932">Tool</option>
+	<option class="level-1" value="4994">&nbsp;&nbsp;&nbsp;Design Tool</option>
+	<option class="level-1" value="4933">&nbsp;&nbsp;&nbsp;Development Kit</option>
+	<option class="level-1" value="4934">&nbsp;&nbsp;&nbsp;Reference Design</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+			</section><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div id="iFrame">
+<iframe src="https://api.aspencore.com/syndication/v1/podcasts/" width="300" height="720" frameborder="0" scrolling="no" ></iframe>
+</div></div></section><section id="custom_html-5" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!-- Bottom Sidebar -->
+<div id="SideBarWrap">
+<div id="div-gpt-ad-filmstrip">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-filmstrip'); });
+</script>
+</div>
+	<p>Advertisement</p>
+</div><!--END #SideBarWrap--></div></section><section id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://www.edn.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form></section></aside><!-- #secondary -->
+
+</div><!-- end .singlepost-wrap -->
+
+
+	
+
+<footer>
+
+<!--====== 728x90 Leader Smartphonebanner AD =======-->
+
+<div id="footerAdWrap">
+
+<div id="div-gpt-ad-leader-smartphonebanner">
+	<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-leader-smartphonebanner'); });
+	</script>
+</div>
+
+<p>Advertisement</p>
+
+</div><!-- END #footerAdWrap -->
+
+<!--======= END 728x90 Leader Smartphonebanner AD =======-->
+
+<div class="section footer">
+    <div class="container layout-footer">
+        <div class="footerBlock-title">Aspencore Network</div>
+        <div class="aspencoreNetwork-column segment-one">
+		<!--PRODUCTS-->
+            <div class="footerBlock-subtitle">Products:</div>
+            <ul class="footerBlock-list">
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.electronicproducts.com/" class="footerblock-link">Electronic Products</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.datasheets.com/" class="footerblock-link">Datasheets.com</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.eem.com" class="footerblock-link">EEM.com</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.techonline.com/" class="footerblock-link">TechOnline</a>
+                </li>
+            </ul>
+        </div><!--end .aspencoreNetwork-column segment-one-->
+		
+		
+		<!--NEWS & ANALYSIS-->
+        <div class="aspencoreNetwork-column segment-two">
+            <div class="footerBlock-subtitle">News &amp; Analysis:</div>
+            <ul class="footerBlock-list">
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.eetimes.com/" class="footerblock-link">EE Times</a>
+                </li>
+				<!--Special Projects-->
+				<li class="footerBlock-item">
+				 <a target="_blank" href="https://www.eetimes.com/category/special-projects/">
+				  <svg enable-background="new 0 0 155 46" version="1.1" viewBox="0 0 155 46" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" style="margin-top: 10px; width: 120px">
+                    <style type="text/css">
+                    .st0{fill:#FFFFFF;}
+                    .st1{fill:#99CCCC;}
+                    </style>
+                  <path class="st0" d="m65.6 17.6s1.5 1.4 3.2 1.4c0.7 0 1.4-0.3 1.4-1.1 0-1.6-6.1-1.6-6.1-5.7 0.1-2.5 2.2-4.2 4.9-4.2 2.9 0 4.4 1.5 4.4 1.5l-1.4 2.8s-1.4-1.2-3-1.2c-0.7 0-1.4 0.3-1.4 1.1 0 1.7 6.1 1.4 6.1 5.7 0 2.3-1.7 4.2-4.8 4.2-3.2 0-5-1.9-5-1.9l1.7-2.6z"/>
+                  <path class="st0" d="m78.3 8.3h5.6c2.6 0 4.4 1.9 4.4 4.7s-1.8 4.7-4.4 4.7h-2.3v4.2h-3.3v-13.6zm4.9 6.5c1.2 0 1.7-0.8 1.7-1.9s-0.6-1.8-1.7-1.8h-1.7v3.7h1.7z"/>
+                  <path class="st0" d="M92.7,8.3h8.5v2.8H96v2.5h4.1v2.8H96V19h5.5v2.8h-8.8V8.3z"/>
+                  <path class="st0" d="m112.4 8c3.4 0 5.1 1.9 5.1 1.9l-1.5 2.5s-1.5-1.4-3.4-1.4c-2.6 0-3.8 1.9-3.8 3.9s1.3 4.1 3.8 4.1c2.1 0 3.6-1.7 3.6-1.7l1.7 2.4s-1.9 2.3-5.5 2.3c-4.3 0-7.1-3-7.1-7 0-3.9 3.1-7 7.1-7z"/>
+                  <path class="st0" d="M122.3,8.3h3.3v13.6h-3.3V8.3z"/>
+                  <path class="st0" d="m138 19h-4.2l-0.8 2.8h-3.4l4.6-13.6h3.5l4.6 13.6h-3.4l-0.9-2.8zm-2.1-7.6s-0.3 1.5-0.6 2.3l-0.8 2.6h2.7l-0.8-2.6c-0.2-0.8-0.5-2.3-0.5-2.3z"/>
+                  <path class="st0" d="M146.1,8.3h3.3V19h5.5v2.8h-8.9V8.3z"/>
+                  <path class="st1" d="m64.5 26.8h4c2 0 3.5 1.4 3.5 3.5s-1.5 3.5-3.5 3.5h-2.5v4.1h-1.5v-11.1zm3.8 5.6c1.3 0 2.1-0.8 2.1-2.2 0-1.3-0.8-2.1-2.1-2.1h-2.3v4.3h2.3z"/>
+                  <path class="st1" d="m76 26.8h3.4c1.2 0 1.6 0.1 2.1 0.3 1.1 0.4 1.9 1.5 1.9 3 0 1.4-0.8 2.6-2 3 0 0 0.1 0.1 0.3 0.5l2.3 4.3h-1.8l-2.3-4.4h-2.4v4.4h-1.5v-11.1zm3.7 5.3c1.2 0 2-0.8 2-2 0-0.8-0.3-1.4-0.9-1.7-0.3-0.2-0.7-0.3-1.5-0.3h-1.8v4h2.2z"/>
+                  <path class="st1" d="m92.9 26.6c3.2 0 5.7 2.5 5.7 5.6 0 3.3-2.5 5.8-5.7 5.8s-5.7-2.5-5.7-5.8c0-3.1 2.5-5.6 5.7-5.6zm0 10c2.3 0 4.1-1.9 4.1-4.4 0-2.4-1.8-4.2-4.1-4.2s-4.1 1.8-4.1 4.2c0 2.5 1.8 4.4 4.1 4.4z"/>
+                  <path class="st1" d="m101.7 34.1h1.5v0.5c0 1.5 0.9 2 1.8 2s1.7-0.5 1.7-2v-6.5h-2.7v-1.3h4.3v7.9c0 2.4-1.7 3.4-3.3 3.4s-3.3-1-3.3-3.4v-0.6z"/>
+                  <path class="st1" d="m113.1 26.8h6.4v1.3h-4.9v3.5h4v1.3h-4v3.6h5.1v1.3h-6.7v-11z"/>
+                  <path class="st1" d="m128.8 26.6c2.7 0 4 1.5 4 1.5l-0.8 1.2s-1.3-1.2-3.2-1.2c-2.5 0-4.1 1.9-4.1 4.2 0 2.4 1.6 4.4 4.1 4.4 2.1 0 3.4-1.4 3.4-1.4l0.8 1.1s-1.5 1.8-4.3 1.8c-3.3 0-5.7-2.5-5.7-5.8 0.2-3.4 2.6-5.8 5.8-5.8z"/>
+                  <path class="st1" d="m139.6 28.1h-3.8v-1.3h9.1v1.3h-3.8v9.7h-1.5v-9.7z"/>
+                  <path class="st1" d="m148.5 35.4s1.2 1.2 2.8 1.2c1 0 1.9-0.6 1.9-1.6 0-2.4-5.4-1.9-5.4-5.3 0-1.7 1.5-3.1 3.6-3.1s3.1 1.1 3.1 1.1l-0.7 1.3s-1-1-2.4-1c-1.2 0-2 0.7-2 1.6 0 2.3 5.4 1.7 5.4 5.3 0 1.7-1.3 3.1-3.5 3.1-2.3 0-3.7-1.5-3.7-1.5l0.9-1.1z"/>
+                  <path class="st1" d="m55 17.7h-3.2c-0.4-1.6-1-3-1.8-4.4l2.3-2.3c0.5-0.5 0.5-1.2 0-1.7l-5.4-5.3c-0.5-0.5-1.2-0.5-1.7 0l-2.3 2.3c-1.4-0.8-2.8-1.4-4.4-1.8v-3.3c0-0.7-0.5-1.2-1.2-1.2h-7.6c-0.7 0-1.2 0.5-1.2 1.2v3.2h-0.1c-0.1 0-0.2 0-0.2 0.1-0.1 0-0.2 0-0.2 0.1-0.2 0.1-0.3 0.1-0.5 0.2h-0.1c-0.3 0.1-0.4 0.1-0.6 0.2h-0.1c-0.2 0.1-0.3 0.1-0.5 0.2-0.7 0.3-1.4 0.6-2.1 1l-2.3-2.2c-0.5-0.5-1.2-0.5-1.7 0l-5.3 5.3c-0.1 0.1-0.2 0.2-0.2 0.4h18.7 0.2c7.2 0 13 5.8 13 13s-5.8 13-13 13h-0.5-18.5c0.1 0.1 0.1 0.3 0.2 0.4l5.3 5.3c0.5 0.5 1.2 0.5 1.7 0l2.3-2.3c0.7 0.4 1.4 0.7 2.1 1 0.2 0.1 0.3 0.1 0.5 0.2h0.1c0.1 0.1 0.3 0.1 0.4 0.2h0.1c0.2 0.1 0.3 0.1 0.5 0.2 0.1 0 0.2 0 0.2 0.1 0.1 0 0.2 0 0.2 0.1h0.1v3.2c0 0.7 0.5 1.2 1.2 1.2h7.6c0.7 0 1.2-0.5 1.2-1.2v-3.1c1.6-0.4 3-1 4.4-1.8l2.3 2.3c0.5 0.5 1.2 0.5 1.7 0l5.3-5.3c0.5-0.5 0.5-1.2 0-1.7l-2.3-2.3c0.8-1.4 1.4-2.8 1.8-4.4h3.6c0.7 0 1.2-0.5 1.2-1.2v-7.6c0-0.7-0.6-1.3-1.2-1.3z"/>
+                  <path class="st1" d="m15.9 33.3h10c-1-0.7-1.8-1.5-2.6-2.5-1.7-2.2-2.8-5-2.8-8s1-5.8 2.8-8c0.7-0.9 1.6-1.8 2.6-2.5h-14.7c-0.4-0.6-1.1-0.9-1.8-0.9-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2c0.7 0 1.4-0.4 1.8-0.9h5.2c-0.5 1-0.8 2-1.1 3h0.9c0.4-0.6 1.1-0.9 1.8-0.9 1.2 0 2.2 1 2.2 2.2s-1 2.2-2.2 2.2c-0.7 0-1.4-0.4-1.8-0.9h-12.2c-0.1-0.2-0.3-0.4-0.5-0.5-0.4-0.3-0.8-0.4-1.3-0.4-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2c0.7 0 1.4-0.4 1.8-0.9h11.7c0.4-0.6 1.1-0.9 1.8-0.9h0.4c1 0.2 1.8 1.1 1.8 2.2 0 0.8-0.5 1.6-1.2 1.9-0.3 0.2-0.7 0.3-1 0.3-0.7 0-1.4-0.4-1.8-0.9h-5.5c-0.4-0.6-1.1-0.9-1.8-0.9-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2c0.7 0 1.4-0.4 1.8-0.9h5c0.3 1.1 0.7 2.1 1.1 3h-1.7c-0.4-0.6-1.1-0.9-1.8-0.9-1.2 0-2.2 1-2.2 2.2 0 0.5 0.1 0.9 0.4 1.2 0.4 0.6 1.1 0.9 1.8 0.9s1.4-0.4 1.8-0.9h1.3zm-6.6-18.8c-0.6 0-1.1-0.5-1.1-1.1s0.5-1.1 1.1-1.1 1.1 0.5 1.1 1.1-0.5 1.1-1.1 1.1zm-7.1 8c-0.6 0-1.1-0.5-1.1-1.1s0.5-1.1 1.1-1.1 1.1 0.5 1.1 1.1c0 0.7-0.5 1.1-1.1 1.1zm6.3 5c-0.6 0-1.1-0.5-1.1-1.1s0.5-1.1 1.1-1.1 1.1 0.5 1.1 1.1-0.4 1.1-1.1 1.1zm4.3 5.6c-0.6 0-1.1-0.5-1.1-1.1s0.5-1.1 1.1-1.1 1.1 0.5 1.1 1.1-0.5 1.1-1.1 1.1z"/>
+                  <circle class="st1" cx="17.9" cy="18.9" r="1.1"/>
+                  <circle class="st1" cx="17.6" cy="23.9" r="1.1"/>
+                  <path class="st0" d="m27.5 19.8c0-0.6 0.1-1.2 0.3-1.7s0.6-1 1-1.4 0.9-0.7 1.4-1c0.5-0.2 1.1-0.3 1.7-0.3h6.8v3h-6.8c-0.2 0-0.4 0-0.6 0.1s-0.3 0.2-0.5 0.3c-0.1 0.1-0.2 0.3-0.3 0.5s-0.1 0.4-0.1 0.6 0 0.4 0.1 0.6 0.2 0.3 0.3 0.5c0.1 0.1 0.3 0.2 0.5 0.3s0.4 0.1 0.6 0.1h3c0.6 0 1.2 0.1 1.7 0.3s1 0.5 1.4 0.9 0.7 0.9 0.9 1.4 0.3 1.1 0.3 1.7-0.1 1.2-0.3 1.7-0.5 1-0.9 1.4-0.9 0.7-1.4 1c-0.5 0.2-1.1 0.3-1.7 0.3h-6.6v-3h6.6c0.2 0 0.4 0 0.6-0.1s0.3-0.2 0.5-0.3c0.1-0.1 0.2-0.3 0.3-0.5s0.1-0.4 0.1-0.6 0-0.4-0.1-0.6-0.2-0.3-0.3-0.5c-0.1-0.1-0.3-0.2-0.5-0.3s-0.4-0.1-0.6-0.1h-3c-0.6 0-1.2-0.1-1.7-0.3s-1-0.6-1.4-1-0.7-0.9-1-1.4c-0.2-0.5-0.3-1-0.3-1.6z"/>
+                  </svg>
+				 </a>				  
+				</li>							
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.eetimes.eu/" class="footerblock-link">EE Times Europe</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.powerelectronicsnews.com/" class="footerblock-link">Power Electronics News</a>
+                </li>
+				<li class="footerBlock-item">
+                    <a target="_blank" href="https://epsnews.com/" class="footerblock-link">EPSNews</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.ebnonline.com/" class="footerblock-link">EBN</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.elektroda.pl/" class="footerblock-link">Elektroda.pl</a>
+                </li>
+            </ul>
+        </div><!--end .aspencoreNetwork-column segment-two-->
+		
+		
+		<!--DESIGN-->
+        <div class="aspencoreNetwork-column segment-three">
+            <div class="footerBlock-subtitle">Design:</div>
+            <ul class="footerBlock-list">
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.edn.com/" class="footerblock-link">EDN</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.electroschematics.com/" class="footerblock-link">Electroschematics</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.electronics-tutorials.ws/" class="footerblock-link">Electronics-Tutorials</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.planetanalog.com/" class="footerblock-link">Planet Analog</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.embedded.com/" class="footerblock-link">Embedded</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.embedded-know-how.com/" class="footerblock-link">Embedded Know How</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://electronics-know-how.com/" class="footerblock-link">Electronics Know How</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.embedded-control-europe.com/" class="footerblock-link">Embedded Control Europe</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://embedded-news.tv/" class="footerblock-link">Embedded News</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://iot-design-zone.com" class="footerblock-link">IOT Design Zone</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://motor-control-design.com/" class="footerblock-link">Motor Control Design</a>
+                </li>
+            </ul>
+        </div><!--end .aspencoreNetwork-column segment-three-->
+		
+		
+		<!--TOOLS-->
+        <div class="aspencoreNetwork-column segment-four">
+            <div class="footerBlock-subtitle">Tools:</div>
+            <ul class="footerBlock-list">
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.eeweb.com/" class="footerblock-link">EEWEB</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.partsim.com/" class="footerblock-link">PartSim</a>
+                </li>
+                <!--<li class="footerBlock-item"><a target="_blank"  href="https://www.orderpcbs.com/" class="footerblock-link">OrderPCBs</a> </li>-->
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.pcbweb.com/" class="footerblock-link">PCBWeb</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.transim.com/iot/" class="footerblock-link">Product Advisor</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://schematics.com/" class="footerblock-link">Schematics.com</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.schematics.io/" class="footerblock-link">Schematics.io</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://www.transim.com/Products/Engage" class="footerblock-link">Engage</a>
+                </li>
+            </ul>
+        </div><!--end .aspencoreNetwork-column segment-four-->
+		
+		
+		<!--GLOBAL NETWORK-->
+        <div class="globalNetwork segment-five">
+            <div class="footerBlock-title">Global Network</div>
+            <ul class="footerBlock-list">
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.eetasia.com/" class="footerblock-link">EE Times Asia</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.eet-china.com/" class="footerblock-link">EE Times China</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.eetindia.co.in/" class="footerblock-link">EE Times India</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.eettaiwan.com/" class="footerblock-link">EE Times Taiwan</a>
+                </li>
+				 <li class="footerBlock-item">
+                    <a target="_blank" href="http://eetimes.jp/" class="footerblock-link">EE Times Japan </a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.ednasia.com/" class="footerblock-link">EDN Asia</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.edntaiwan.com/" class="footerblock-link">EDN Taiwan</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.esmchina.com/" class="footerblock-link">ESM China</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://www.ednchina.com/" class="footerblock-link">EDN China</a>
+                </li>
+                <li class="footerBlock-item">
+                    <a target="_blank" href="http://ednjapan.com/" class="footerblock-link">EDN Japan</a>
+                </li>
+            </ul>
+        </div><!--end .globalNetwork segment-five-->
+		
+		
+		<!--FOR ADVERTISERS-->
+        <div class="forAdvertisers segment-six">
+            <div class="footerBlock-title">For Advertisers</div>
+            <ul class="footerBlock-list">
+               <!-- <li class="footerBlock-item">
+                    <a target="_blank" href="http://mac.aspencore.com/AspenCore_Contact-Us.html" class="footerblock-link">Contact Sales</a>
+                </li> -->
+                <li class="footerBlock-item">
+                    <a target="_blank" href="https://aspencore.com/media-guide-request-2/" class="footerblock-link">Media Guide Request</a>
+                </li>
+            </ul>
+        </div><!--end .forAdvertisers segment-six-->
+		
+		
+		<!--CONNECT WITH US-->
+        <div class="connectWithUs segment-seven">
+            <div class="footerBlock-title">Connect with us</div>
+            <ul class="footerBlock-list">
+			
+		
+			<!--FACEBOOK-->
+			<li class="footerBlock-item">
+			  <div class="SocialIconFooterA">
+			   <img src="/wp-content/uploads/facebook-footer-icon.png">
+			  </div><!--end .SocialIconFooter-->
+			  
+                    <a target="_blank" href="https://www.facebook.com/ElectronicsDesignNetwork/" class="footerblock-link">
+					 
+					Facebook</a>
+			</li>
+		
+            <!--TWITTER-->
+				<li class="footerBlock-item">
+				  <div class="SocialIconFooterB">
+				    <img src="/wp-content/uploads/twitter-footer-icon.png">
+				  </div><!--end .SocialIconFooter-->
+				  
+                    <a target="_blank" href="https://twitter.com/EDNcom" class="footerblock-link">
+					  
+					Twitter</a>
+                </li>
+
+
+
+			<!--INSTAGRAM-->
+				<li class="footerBlock-item">
+				  <div class="SocialIconFooterB">
+				    <img src="/wp-content/uploads/2020/01/instagram-footer-icon.png">
+				  </div><!--end .SocialIconFooter-->
+				  
+                    <a target="_blank" href="https://www.instagram.com/edn_network/" class="footerblock-link">
+					  
+					Instagram</a>
+                </li>
+
+
+
+			<!--LINKEDIN-->
+				<li class="footerBlock-item">
+				  <div class="SocialIconFooterB">
+				    <img src="/wp-content/uploads/2020/01/linkedin-footer-icon.png">
+				  </div><!--end .SocialIconFooter-->
+				  
+                    <a target="_blank" href="https://www.linkedin.com/company/edn-network" class="footerblock-link">
+					  
+					LinkedIn</a>
+                </li>
+				
+			
+				
+            </ul><!--end ul.footerBlock-list-->
+        </div><!--end .connectWithUs segment-seven-->
+
+
+		<!--ASPENCORE LOGO-->
+		<a href="http://www.aspencore.com/">
+        <div class="aspencoreLogo">
+            <svg class="aspencoreLogo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 282 28">
+                <path d="M203.92 2.36l.19-.1zM52 6.66a6 6 0 0 0-1.11-.91 11.11 11.11 0 0 0-1.7-.91 12.66 12.66 0 0 0-2.16-.7 11.76 11.76 0 0 0-2.51-.27 6.17 6.17 0 0 0-3.82 1 3.36 3.36 0 0 0-1 1.25 3.29 3.29 0 0 0-.31 1.58 2.88 2.88 0 0 0 .42 1.64 3.39 3.39 0 0 0 1.25 1.1 10 10 0 0 0 2.1.85c.83.25 1.82.52 2.93.8 1.32.36 2.54.73 3.64 1.12a10.38 10.38 0 0 1 2.83 1.45 6 6 0 0 1 1.82 2.15 6.94 6.94 0 0 1 .7 3.19 7.83 7.83 0 0 1-.8 3.69 7 7 0 0 1-2.16 2.45A9.44 9.44 0 0 1 49 27.53a15.33 15.33 0 0 1-3.82.42 18.87 18.87 0 0 1-6-.95 16.66 16.66 0 0 1-5.23-2.77l2-3.71a9 9 0 0 0 1.41 1.12 12.37 12.37 0 0 0 2.16 1.14 17.76 17.76 0 0 0 2.73.89 12.46 12.46 0 0 0 3.1.37 6.78 6.78 0 0 0 3.8-.91 2.93 2.93 0 0 0 1-1.14 3 3 0 0 0 .33-1.51 2.9 2.9 0 0 0-.5-1.74 4.12 4.12 0 0 0-1.43-1.23 12.4 12.4 0 0 0-2.34-.93c-.91-.28-2-.57-3.13-.87a31 31 0 0 1-3.53-1.15A8.7 8.7 0 0 1 37 13.11a5.66 5.66 0 0 1-1.5-2 6.57 6.57 0 0 1-.5-2.76 8.29 8.29 0 0 1 .74-3.57 7.56 7.56 0 0 1 2.06-2.63A9.27 9.27 0 0 1 40.92.54 13.22 13.22 0 0 1 44.77 0a14.34 14.34 0 0 1 5.14.89A16.7 16.7 0 0 1 54 3.09zm15.78 21V.19h11.43a7.47 7.47 0 0 1 3.38.81 8.64 8.64 0 0 1 2.65 2A9.8 9.8 0 0 1 87 5.86a8.73 8.73 0 0 1 .63 3.27 9.62 9.62 0 0 1-2.23 6.22 8 8 0 0 1-2.59 2 7.2 7.2 0 0 1-3.34.76H72.1v9.57zm4.28-13.4h7.07a3.48 3.48 0 0 0 1.67-.39 3.81 3.81 0 0 0 1.28-1.08 5.26 5.26 0 0 0 .92-1.6 6.75 6.75 0 0 0 .31-2 6 6 0 0 0-.35-2.09 5 5 0 0 0-1-1.61 4.45 4.45 0 0 0-1.4-1A3.8 3.8 0 0 0 79 4h-6.9zm45.7 9.58v3.82H99.19V.19h18.26V4h-14v7.84h12.11v3.6h-12.09v8.42zM134.3 8.32v19.37H130V.19h3.35L148.88 20V.23h4.32v27.46h-3.55zm30.23 5.46a14.37 14.37 0 0 1 .88-4.94A14 14 0 0 1 168 4.43a12.71 12.71 0 0 1 4-3.16 12.07 12.07 0 0 1 5.44-1.2 11.38 11.38 0 0 1 6.25 1.67 10.54 10.54 0 0 1 3.92 4.34l-3.35 2.28a7 7 0 0 0-3.08-3.45 6.88 6.88 0 0 0-1.93-.71 9.1 9.1 0 0 0-1.92-.2 7.33 7.33 0 0 0-3.64.84 8.19 8.19 0 0 0-2.69 2.3 10.3 10.3 0 0 0-1.61 3.21 12.35 12.35 0 0 0-.53 3.57 11.45 11.45 0 0 0 .63 3.81 10.54 10.54 0 0 0 1.8 3.27 9.13 9.13 0 0 0 2.71 2.18 7.36 7.36 0 0 0 3.44.85 8.44 8.44 0 0 0 2-.26 6.89 6.89 0 0 0 2-.81 8.15 8.15 0 0 0 1.74-1.41 7.33 7.33 0 0 0 1.34-2.05l3.55 2.05a8.39 8.39 0 0 1-1.81 2.74 11.37 11.37 0 0 1-2.62 2A13.15 13.15 0 0 1 177.3 28a10.93 10.93 0 0 1-5.16-1.23 13.87 13.87 0 0 1-4-3.24 15.13 15.13 0 0 1-3.57-9.7zm67.84 13.91V.19h11.81a7.47 7.47 0 0 1 3.38.77 8.8 8.8 0 0 1 2.66 2 9.77 9.77 0 0 1 1.78 2.9 8.94 8.94 0 0 1 .64 3.27 9.32 9.32 0 0 1-1.44 5 7.5 7.5 0 0 1-1.67 1.88 7 7 0 0 1-2.18 1.18l6.43 10.46h-4.85l-6-9.57h-6.28v9.57zm4.28-13.4h7.49a3.41 3.41 0 0 0 1.68-.42 4 4 0 0 0 1.25-1.13 5.54 5.54 0 0 0 .84-1.64 6.06 6.06 0 0 0 .3-2 5.13 5.13 0 0 0-.36-2 5.67 5.67 0 0 0-.95-1.63 4.6 4.6 0 0 0-1.38-1.1A3.4 3.4 0 0 0 243.9 4h-7.25zM282 23.87v3.82h-18.61V.19h18.26V4h-14v7.84h12.11v3.6h-12.09v8.42zM14.44.2h-3.51L0 27.69h4.58l8.1-20.88 8.1 20.88h4.55zM209.61 0a13.66 13.66 0 0 0-7.67 2.36 14 14 0 0 0-5.09 6.28 14.16 14.16 0 0 0-.78 8.09 14 14 0 0 0 3.78 7.17 13.72 13.72 0 0 0 21.25-2.12 14.14 14.14 0 0 0-1.72-17.68 13.7 13.7 0 0 0-9.77-4.1zm0 24a9.82 9.82 0 0 1-5.49-1.69 9.92 9.92 0 0 1-3.64-4.5 10.11 10.11 0 0 1 2.14-10.93 9.92 9.92 0 0 1 5.07-2.74 9.79 9.79 0 0 1 5.71.57 9.89 9.89 0 0 1 4.44 3.7 10.09 10.09 0 0 1 .91 9.4 9.89 9.89 0 0 1-5.35 5.43 9.86 9.86 0 0 1-3.79.76z"></path>
+            </svg>
+        </div><!--end .aspencoreLogo-->
+		</a>
+    </div><!--end .container layout-footer-->
+</div><!--end .section footer-->
+
+<!--LEGAL FOOTER-->
+<div class="section legal">
+    <div class="container">
+        <div class="legalFooter">
+            <div class="legalFooter-copyright">All contents are Copyright &copy; 2020 <a href="http://www.aspencore.com/">by AspenCore, Inc.</a> All Rights Reserved.</div>
+            <div class="legalFooter-links">
+			    <!--Contact Us-->
+                <a target="_blank" href="http://mac.aspencore.com/AspenCore_Contact-Us.html" class="legalFooter-link">Contact Us</a>
+				<!--About Us-->
+                <a target="_blank" href="http://www.aspencore.com/" class="legalFooter-link">About Us</a>
+				<!--Privacy Policy-->
+                <a target="_blank" href="http://www.aspencore.com/privacy-policy" class="legalFooter-link">Privacy Policy</a>
+				<!--Terms of Use-->
+                <a target="_blank" href="http://www.aspencore.com/terms-of-use" class="legalFooter-link">Terms of Use</a>
+				<!--Site Map-->
+                <a target="_blank" href="/sitemap.xml" class="legalFooter-link">Site Map</a>
+                <!--EETimes Newsletter-->
+				<!--
+				<a target="_blank" href="http://go.aspencore.com/EETSubscribe" class="legalFooter-link">Newletters</a>
+				-->
+            </div><!--end .legalFooter-links-->
+        </div><!--end .legalFooter-->
+    </div><!--end .container-->
+</div><!--end .section legal-->
+
+</footer>
+
+
+
+<!--==== Static Footer END ====-->
+
+<script type='text/javascript'>
+janrain.settings.borderColor = '#ffffff';
+janrain.settings.fontFamily = 'Helvetica, Lucida Grande, Verdana, sans-serif';
+janrain.settings.width = 300;
+janrain.settings.actionText = ' ';
+janrain.settings.capture.modalCloseHtml = 'X';
+janrain.settings.capture.noModalBorderInlineCss = true;
+janrain.settings.capture.flowName = 'aspencore';
+</script>
+  <!--
+    ============================================================================
+        A NOTE ON NAVIGATION:
+        These links are not needed for integration into your site. These links
+        are only used for navigating the reference implementation that exists on
+        our servers for testing/demo/sample purposes. It is not required for
+        your implementation.
+        Here you can see an example of using janrain.capture.ui.renderScreen in
+        conjunction with HTML elements to simplify user navigation.
+    ============================================================================
+    -->
+
+
+
+
+    <!--
+    ============================================================================
+        A NOTE ON NAVIGATION:
+        These links are not needed for integration into your site. These links
+        are only used for navigating the reference implementation that exists on
+        our servers for testing/demo/sample purposes. It is not required for
+        your implementation.
+        Here you can see an example of using janrain.capture.ui.renderScreen in
+        conjunction with HTML elements to simplify user navigation.
+    ============================================================================
+    
+    <a href="#" id="captureSignInLink" onclick="janrain.capture.ui.renderScreen('signIn')">Sign In / Sign Up</a>
+    <a href="edit-profile.html?screenToRender=editProfile" id="captureProfileLink" style="display:none">Edit Profile</a>
+    <a href="#" id="captureSignOutLink" style="display:none" onclick="janrain.capture.ui.endCaptureSession()">Sign Out</a>
+-->
+
+
+
+    <!--
+    ============================================================================
+        SIGNIN SCREENS:
+        The following screens are part of the sign in user workflow. For a
+        complete out-of-the-box sign in experience, these screens must be
+        included on the page where you are implementing sign in and registration.
+    ============================================================================
+    -->
+
+    <!-- signIn:
+    This is the starting point for sign in and registration. This screen is
+    rendered by default. In order to change this behavior, the Flow must be
+    edited.
+    -->
+    <div style="display:none;" id="signIn">
+        <div class="capture_header">
+            <h1>Sign Up / Sign In</h1>
+        </div>
+       
+        <div class="capture_backgroundColor">
+            <div class="capture_signin">
+                <h2>With a traditional account...</h2>
+                {* #signInForm *}
+                    {* signInEmailAddress *}
+                    {* currentPassword *}
+                    
+                    <div class="capture_rightText">
+                        <button class="capture_secondary capture_btn capture_primary" type="submit"><span class="janrain-icon-16 janrain-icon-key"></span> Sign In</button>
+                        <a href="#" id="capture_signIn_createAccountButton" data-capturescreen="traditionalRegistration" class="capture_secondary capture_createAccountButton capture_btn capture_primary">Create Account</a>
+                        <div class="serviceMarks">
+                            {* poweredByJanrain *}
+                            <div id="adfdcb81-3fcc-4e89-807b-a54a89fab74d">
+                                <script type="text/javascript" src="//privacy-policy.truste.com/privacy-seal/Janrain,-Inc-/asc?rid=adfdcb81-3fcc-4e89-807b-a54a89fab74d"></script>
+                                <a href="//privacy.truste.com/privacy-seal/Janrain,-Inc-/validation?rid=1b233149-fc3b-4e69-957a-ca7677ee4787" title="TRUSTe Privacy, Trusted Cloud, European Safe Harbor certification" target="_blank"><img style="border: none" src="//privacy-policy.truste.com/privacy-seal/Janrain,-Inc-/seal?rid=7bc0f34d-9cf2-427d-af9e-15e2fc354825" alt="TRUSTe European Safe Harbor certification"/></a>
+                            </div>
+                        </div>
+                    </div>
+                {* /signInForm *}
+            </div>
+        </div>
+    </div>
+
+    <!-- returnSocial:
+    This is the screen the user sees in place of the signIn screen if they've
+    already signed in with a social account on this site. Rendering of this
+    screen is defined in the Flow only when the 'janrainLastAuthMethod' cookie
+    is set to'socialSignin'.
+    -->
+    <div style="display:none;" id="returnSocial">
+        <div class="capture_header">
+            <h1>Sign In</h1>
+        </div>
+        <div class="capture_signin">
+            <h2>Welcome back, {* welcomeName *}!</h2>
+            {* loginWidget *}
+            <div class="capture_centerText switchLink"><a href="#" data-cancelcapturereturnexperience="true">Use another account</a></div>
+        </div>
+    </div>
+
+    <!-- returnTraditional:
+    This is the screen the user sees in place of the signIn screen if they've
+    already signed in with a traditional account on this site. Rendering of this
+    screen is defined in the Flow only when the 'janrainLastAuthMethod' cookie
+    is set to'traditionalSignin'.
+    -->
+    <div style="display:none;" id="returnTraditional">
+        <div class="capture_header">
+            <h1>Sign In</h1>
+        </div>
+        <h2 class="capture_centerText"><span id="traditionalWelcomeName">Welcome Back</span></h2>
+        <div class="capture_backgroundColor">
+            {* #signInForm *}
+                {* signInEmailAddress *}
+                {* currentPassword *}
+                <div class="capture_form_item capture_rightText">
+                    <button class="capture_secondary capture_btn capture_primary" type="submit"><span class="janrain-icon-16 janrain-icon-key"></span> Sign In</button>
+                </div>
+            {* /signInForm *}
+            <div class="capture_centerText switchLink"><a href="#" data-cancelcapturereturnexperience="true">Use another account</a></div>
+        </div>
+    </div>
+
+    <!-- accountDeactivated:
+        This screen is rendered if the user's account is deactivated. Screen
+        rendering is handled in janrain-init.js.
+    -->
+    <div style="display:none;" id="accountDeactivated">
+        <div class="capture_header">
+            <h1>Account Deactivated</h1>
+        </div>
+        <div class="content_wrapper">
+            <p>Your account has been deactivated.</p>
+        </div>
+    </div>
+
+    <div style="display:none;" id="reactivateAccount">    
+        <h2>Account Reactivation Failed</h2> 
+        <p>Sorry, we could not verify that email address.</p>   
+    </div>
+
+    <div style="display: none;" id="reactivateAccountSuccess">    
+        <h2>Account Activated</h2>    
+        <p>Your account has been reactivated.</p>
+        <div class="capture_footer">
+            <a href="/" class="capture_btn capture_primary">Sign in</a>
+        </div>       
+    </div>
+
+
+    <!-- emailVerificationRequired:
+        This screen is rendered if you have enabled the requirement for verified emails and the user's email has not yet been verified. This screen may appear immediately after registration and also on subsequent logins until the email is verified. Screen rendering is handled in the postLoginScreens Capture settings per API client. A value of "emailVerificationRequired" will enable the requirement of having a verified email. A value of "false" will disable the requirement of having a verified email.
+    -->
+    <div style="display:none;" id="emailVerificationRequired">
+        <div class="capture_header">
+            <h1>Email Verification Required</h1>
+        </div>
+        <p>You must verify your email address before signing in. Check your email for your verification email, or enter your email address in the form below to resend the email.</p>
+
+        {* #resendVerificationForm *}
+            {* signInEmailAddress *}
+            <div class="capture_footer">
+                <input value="Submit" type="submit" class="capture_btn capture_primary">
+            </div>
+        {* /resendVerificationForm *}
+    </div>
+
+
+    <!--
+    ============================================================================
+        REGISTRATION SCREENS:
+        The following screens are part of the registration user workflow. For a
+        complete out-of-the-box registration experience, these screens must be
+        included on the page where you are implementing sign in and
+        registration.
+    ============================================================================
+    -->
+
+    <!-- socialRegistration:
+        When a user clicks an IDP and does not already have an account in your
+        capture application, this screen is rendered. This behavior is defined
+        in the Flow.
+    -->
+    <div style="display:none;" id="socialRegistration">
+        <div class="capture_header">
+            <h1>Almost Done</h1>
+        </div>
+        <h2>Please confirm the information below before signing in.</h2>
+        {* #socialRegistrationForm *}
+            <!-- The following fields are required by default and must be included in the socialRegistrationForm. In order to change any of these fields to optional, the Flow must be edited. -->
+            {* firstName *}
+            {* lastName *}
+            {* displayName *}
+            {* emailAddress *}
+            <!-- The following fields are optional and may be uncommented if you wish to collect any of these fields via the socialRegistrationForm. In order to change any of these fields to required, the Flow must be edited. 
+            {* middleName *}
+            {* gender *}
+            {* birthdate *}
+            {* phone *}
+            {* mobile *}
+            {* addressStreetAddress1 *}
+            {* addressStreetAddress2 *}
+            {* addressCity *}
+            {* addressPostalCode *}
+            {* addressState *}
+            {* addressCountry *}
+            {* optInRegistration *}
+            -->
+            By clicking "Sign In", you confirm that you accept our <a href="#">terms of service</a> and have read and understand <a href="#">privacy policy</a>.
+            <div class="capture_footer">
+                <div class="capture_left">
+                    {* backButton *}
+                </div>
+                <div class="capture_right">
+                    <input value="Create Account" type="submit" class="capture_btn capture_primary">
+                </div>
+            </div>
+        {* /socialRegistrationForm *}
+    </div>
+
+    <!-- traditionalRegistration:
+        When a user clicks the 'Create Account' button this screen is rendered.
+    -->
+   <div style="display:none;" id="traditionalRegistration">
+        <div class="capture_header">
+            <div class="login-header-text">Registration</div>
+        </div>		
+        <p>Please confirm the information below before signing in. Already have an account? <a id="capture_traditionalRegistration_navSignIn" href="#" data-capturescreen="signIn">Sign In.</a></p>
+        {* #registrationForm *}
+		{* emailAddress *}
+            {* newPassword *}
+            {* newPasswordConfirm *}
+            {* displayName *}
+            {* jobTitle *}
+            {* firstName *}
+            {* lastName *}
+            {* ednembJobfunction  *}
+            {* jobFunctionOther *}
+            {* ednembIndustry  *}
+            {* industryOther *} 
+            {* linkedinProfileName *}
+            {* twitterProfileName *}
+            {* companyName *}
+            {* addressStreetAddress1 *}
+            {* addressStreetAddress2 *}
+            {* addressCountry *}
+            {* addressState *}
+            {* addressStateText *}
+            {* addressCity *}
+            {* addressPostalCode *}
+            {* phone *}
+	   	<div class="checkboxes">
+			{* optInRegistration *}
+			{* optAgree *}
+			{* optShare *}
+		</div>
+			{* siteName *}
+            By clicking "Create Account", you confirm that you accept our <a href="#">terms of service</a> and have read and understand <a href="#">privacy policy</a>.
+			<div class="errorBox"></div>
+            <div class="capture_footer">
+                <div class="capture_left">
+                    {* backButton *}
+                </div>
+                <div class="capture_right">
+                    <input value="Create Account" type="submit"  id="signupBtn"  class="capture_btn capture_primary">
+                </div>
+            </div>			
+        {* /registrationForm *}
+    </div>
+
+
+
+    <!-- emailVerificationNotification:
+        This screen is rendered after a user has registered. In the case of
+        traditional registration, this screen is always rendered after the user
+        completes registration on the traditionalRegistration screen. In the
+        case of social registration, this screen is only rendered if the data
+        returned from the IDP does not contain a verified email address.
+        Twitter is an example of an IDP that does not return a verified email.
+    -->
+    <div style="display:none;" id="emailVerificationNotification">
+        <div class="capture_header">
+            <h1>Thank You for Registering</h1>
+        </div>
+        <p>We have sent a confirmation email to {* emailAddressData *}. Please check your email and click on the link to verify your email address.</p>
+        <div class="capture_footer">
+            <a href="#" onclick="janrain.capture.ui.modal.close()" class="capture_btn capture_primary">Close</a>
+        </div>
+    </div>
+
+
+
+
+    <!--
+    ============================================================================
+        FORGOT PASSWORD SCREENS:
+        The following screens are part of the forgot password user workflow. For
+        a complete out-of-the-box registration experience, these screens must be
+        included on the page where you are implementing forgot password
+        functionality.
+    ============================================================================
+    -->
+
+    <!-- forgotPassword:
+        Entry point into the forgot password user workflow. This screen is
+        rendered when the user clicks on the 'Forgot your password?' link on the
+        signIn screen.
+    -->
+    <div style="display:none;" id="forgotPassword">
+        <div class="capture_header">
+            <h1>Create New Password</h1>
+        </div>
+        <h2>We'll send you a link to create a new password.</h2>
+        {* #forgotPasswordForm *}
+            {* signInEmailAddress *}
+            <div class="capture_footer">
+                <div class="capture_left">
+                    {* backButton *}
+                </div>
+                <div class="capture_right">
+                    <input value="Send" type="submit" class="capture_btn capture_primary">
+                </div>
+            </div>
+        {* /forgotPasswordForm *}
+    </div>
+
+    <!-- forgotPasswordSuccess:
+        When the user submits an email address on the forgotPassword screen,
+        this screen is rendered.
+    -->
+    <div style="display:none;" id="forgotPasswordSuccess">
+        <div class="capture_header">
+            <h1>Create New Password</h1>
+        </div>
+            <p>We've sent an email with instructions to create a new password. Your existing password has not been changed.</p>
+        <div class="capture_footer">
+            <a href="#" onclick="janrain.capture.ui.modal.close()" class="capture_btn capture_primary">Close</a>
+        </div>
+    </div>
+
+
+
+
+    <!--
+    ============================================================================
+        MERGE ACCOUNT SCREENS:
+        The following screens are part of the account merging user workflow. For
+        a complete out-of-the-box account merging experience, these screens must
+        be included on the page where you are implementing account merging
+        functionality.
+    ============================================================================
+    -->
+
+    <!-- mergeAccounts:
+        This screen is rendered if the user created their account through
+        traditional registration and then tries to sign in with an IDP that
+        shares the same email address that exists in their user record.
+        NOTE! You will notice special tags you see on this screen. These tags,
+        such as '{| current_displayName |}' are rendered by the Janrain Capture
+        Widget in a way similar to JTL tags, but are more limited. We currently
+        only support modifying the text in this screen through the Flow. You
+        can, however, add your own markup and text throughout this screen as you
+        see fit.
+    -->
+    <div style="display:none;" id="mergeAccounts">
+        {* mergeAccounts {"custom": true} *}
+        <div id="capture_mergeAccounts_mergeAccounts_mergeOptionsContainer" class="capture_mergeAccounts_mergeOptionsContainer">
+            <div class="capture_header">
+                <div class="capture_icon_col">
+                    {| rendered_current_photo |}
+                </div>
+                <div class="capture_displayName_col">
+                    {| current_displayName |}<br />
+                    {| current_emailAddress |}
+                </div>
+                <span class="capture_mergeProvider janrain-provider-icon-24 janrain-provider-icon-{| current_provider_lowerCase |}"></span>
+            </div>
+            <div class="capture_dashed">
+                <div class="capture_mergeCol capture_centerText capture_left">
+                    <p class="capture_bigText">{| foundExistingAccountText |} <b>{| current_emailAddress |}</b>.</p>
+                    <div class="capture_hover">
+                        <div class="capture_popup_container">
+                            <span class="capture_popup-arrow"></span>{| moreInfoHoverText |}<br />
+                            {| existing_displayName |} - {| existing_provider |} : {| existing_siteName |} {| existing_createdDate |}
+                        </div>
+                        {| moreInfoText |}
+                    </div>
+                </div>
+                <div class="capture_mergeCol capture_mergeExisting_col capture_right">
+                    <div class="capture_shadow capture_backgroundColor capture_border">
+                        {| rendered_existing_provider_photo |}
+                        <div class="capture_displayName_col">
+                            {| existing_displayName |}<br />
+                            {| existing_provider_emailAddress |}
+                        </div>
+                        <span class="capture_mergeProvider janrain-provider-icon-16 janrain-provider-icon-{| existing_provider_lowerCase |} "></span>
+                        <div class="capture_centerText capture_smallText">Created {| existing_createdDate |} at {| existing_siteName |}</div>
+                    </div>
+                </div>
+            </div>
+            <div id="capture_mergeAccounts_form_collection_mergeAccounts_mergeRadio" class="capture_form_collection_merge_radioButtonCollection capture_form_collection capture_elementCollection capture_form_collection_mergeAccounts_mergeRadio" data-capturefield="undefined">
+                <div id="capture_mergeAccounts_form_item_mergeAccounts_mergeRadio_1_0" class="capture_form_item capture_form_item_mergeAccounts_mergeRadio capture_form_item_mergeAccounts_mergeRadio_1_0 capture_toggled" data-capturefield="undefined">
+                    <label for="capture_mergeAccounts_mergeAccounts_mergeRadio_1_0">
+                        <input id="capture_mergeAccounts_mergeAccounts_mergeRadio_1_0" data-capturefield="undefined" data-capturecollection="true" value="1" type="radio" class="capture_mergeAccounts_mergeRadio_1_0 capture_input_radio" checked="checked" name="mergeAccounts_mergeRadio">
+                            {| connectLegacyRadioText |}
+                    </label>
+                </div>
+                <div id="capture_mergeAccounts_form_item_mergeAccounts_mergeRadio_2_1" class="capture_form_item capture_form_item_mergeAccounts_mergeRadio capture_form_item_mergeAccounts_mergeRadio_2_1" data-capturefield="undefined">
+                    <label for="capture_mergeAccounts_mergeAccounts_mergeRadio_2_1">
+                        <input id="capture_mergeAccounts_mergeAccounts_mergeRadio_2_1" data-capturefield="undefined" data-capturecollection="true" value="2" type="radio" class="capture_mergeAccounts_mergeRadio_2_1 capture_input_radio" name="mergeAccounts_mergeRadio">
+                            {| createRadioText |} {| current_provider |}
+                    </label>
+                </div>
+                <div class="capture_tip" style="display:none;">
+                </div>
+                <div class="capture_tip_validating" data-elementname="mergeAccounts_mergeRadio">Validating</div>
+                <div class="capture_tip_error" data-elementname="mergeAccounts_mergeRadio"></div>
+            </div>
+            <div class="capture_footer">
+                {| connect_button |}
+                {| create_button |}
+            </div>
+        </div>
+    </div>
+
+    <!-- traditionalAuthenticateMerge:
+        When the user elects to merge their traditional and social account, the
+        user will see this screen. They will then enter their current sign in
+        credentials and, upon successful authorization, the accounts will be
+        merged.
+    -->
+    <div style="display:none;" id="traditionalAuthenticateMerge">
+        <div class="capture_header">
+            <h1>Sign In to Complete Account Merge</h1>
+        </div>
+        <div class="capture_signin">
+            {* #signInForm *}
+                {* signInEmailAddress *}
+                {* currentPassword *}
+                <div class="capture_footer">
+                    <div class="capture_left">
+                        {* backButton *}
+                    </div>
+                    <div class="capture_right">
+                        <button class="capture_secondary capture_btn capture_primary" type="submit"><span class="janrain-icon-16 janrain-icon-key"></span> Sign In</button>
+                    </div>
+                </div>
+             {* /signInForm *}
+        </div>
+    </div>
+
+
+
+
+    <!--
+    ============================================================================
+        EMAIL VERIFICATION SCREENS:
+        The following screens are part of the email verification user workflow.
+        For a complete out-of-the-box email verification experience, these
+        screens must be included on page where you are implementing email
+        verification.
+    ============================================================================
+    -->
+
+    <!-- verifyEmail:
+        This is the landing screen after a user clicks on the link in the
+        verification email sent to the user when they've registered with a
+        non-verified email address.
+        HOW IT WORKS: The code that is generated by Capture and included in the
+        link sent in the verification email is sent to the server and, if valid,
+        the user's email will be marked as valid and the verifyEmailSuccess
+        screen will be rendered. If the code is not accepted for any reason,
+        the verifyEmail screen is shown and the user has another opportunity
+        to have the verification email sent to them.
+        NOTE: The links generated in the emails sent to users are based on
+        Capture settings found in Janrain's Capture Dashboard. In addition to
+        entering the URL of your email verification page, you will need to add
+        'screenToRender' as a parameter in the URL with a value of 'verifyEmail'
+        which is this screen.
+    -->
+    <div style="display:none;" id="verifyEmail">
+        <div class="capture_header">
+            <h1>Resend Verification Email</h1>
+        </div>
+        <p>Sorry, we could not verify that email address. Enter your email below, and we'll send you another email.</p>
+        {* #resendVerificationForm *}
+            {* signInEmailAddress *}
+            <div class="capture_footer">
+                <input value="Submit" type="submit" class="capture_btn capture_primary">
+            </div>
+         {* /resendVerificationForm *}
+    </div>
+
+    <!-- resendVerificationSuccess:
+        This screen is rendered when a user enters an email address from the
+        verifyEmail screen.
+    -->
+    <div style="display:none;" id="resendVerificationSuccess">
+        <div class="capture_header">
+            <h1>Verification Email Sent</h1>
+        </div>
+        <div class="hr"></div>
+        <p>Check your email for a link to verify your email address.</p>
+        <div class="capture_footer">
+            <a href="/" class="capture_btn capture_primary">Sign in</a>
+        </div>
+    </div>
+
+    <!-- verifyEmailSuccess:
+        This screen is rendered if the verification code provided in the link
+        sent to the user in the verification email is accepted and the user's
+        email address has been verified.
+    -->
+    <div style="display:none;" id="verifyEmailSuccess">
+        <div class="capture_header">
+            <h1>Email Verified</h1>
+        </div>
+        <p>Thank you for verifiying your email address.
+        <div class="capture_footer">
+            <a href="/" class="capture_btn capture_primary">Sign in</a>
+        </div>
+    </div>
+
+
+
+
+    <!--
+    ============================================================================
+        RESET PASSWORD SCREENS:
+        The following screens are part of the password reset user workflow.
+        For a complete out-of-the-box password reset experience, these screens
+        must be included on the page where you are implementing password reset
+        functionality.
+        NOTE: The order in which these screens are rendered is as follows:
+        resetPasswordRequestCode
+        resetPasswordRequestCodeSuccess
+        resetPassword
+        resetPasswordSuccess
+    ============================================================================
+    -->
+
+    <!-- resetPassword:
+        This screen is rendered when the user clicks the link in provided in the
+        password reset email and the code in the link is valid.
+    -->
+    <div style="display:none;" id="resetPassword">
+        <div class="capture_header">
+            <h1>Change Password</h1>
+        </div>
+        {* #changePasswordFormNoAuth *}
+            {* newPassword *}
+            {* newPasswordConfirm *}
+            <div class="capture_footer">
+                <input value="Submit" type="submit" class="capture_btn capture_primary">
+            </div>
+        {* /changePasswordFormNoAuth *}
+    </div>
+    <!-- resetPasswordSuccess:
+        This screen is rendered when the user successfully changes their
+        password from the resetPassword screen.
+    -->
+    <div style="display:none;" id="resetPasswordSuccess">
+        <div class="capture_header">
+            <h1>Password Changed</h1>
+        </div>
+        <p>Your password has been successfully updated.</p>
+        <div class="capture_footer">
+            <a href="/" class="capture_btn capture_primary">Sign in</a>
+        </div>
+    </div>
+    <!-- resetPasswordRequestCode:
+        This is the landing screen for the password reset workflow. When the
+        user clicks the link provided in the reset password email, a code is
+        supplied and is passed to Capture for verification. If the code is valid
+        the resetPassword screen is rendered immediately and the content of
+        this screen is not presented. If the code is not accepted for any reason
+        this screen is then presented, allowing the user to re-enter their
+        email address.
+    -->
+    <div style="display:none;" id="resetPasswordRequestCode">
+        <div class="capture_header">
+            <h1>Create New Password</h1>
+        </div>
+        <p>We didn't recognize that password reset code. Enter your email below, and we'll send you another email.</p>
+        {* #resetPasswordForm *}
+            {* signInEmailAddress *}
+            <div class="capture_footer">
+                <input value="Send" type="submit" class="capture_btn capture_primary">
+            </div>
+        {* /resetPasswordForm *}
+    </div>
+
+    <!-- resetPasswordRequestCodeSuccess:
+        This screen is rendered if the user submitted an email address on the
+        resetPasswordRequestCode screen.
+    -->
+    <div style="display:none;" id="resetPasswordRequestCodeSuccess">
+        <div class="capture_header">
+            <h1>Create New Password</h1>
+        </div>
+            <p>We've sent you an email with instructions to create a new password. Your existing password has not been changed.</p>
+        <div class="capture_footer">
+            <a href="#" onclick="janrain.capture.ui.modal.close()" class="capture_btn capture_primary">Close</a>
+        </div>
+    </div>
+
+
+    <!-- Flow version:
+        This is a container for a debugging utility.  See showFlowVersion() and
+        the onCaptureRenderStart event handler in janrain-init.js.
+    
+    <div id="flow-version"></div>
+-->
+<style>#janrain-share { z-index: 99999 !important; }</style>
+<script type="text/javascript">
+(function() {
+	if (typeof window.janrain !== 'object') window.janrain = {};
+	if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
+	if (typeof window.janrain.settings.share !== 'object') window.janrain.settings.share = {};
+	if (typeof window.janrain.settings.packages !== 'object') janrain.settings.packages = ['share'];
+	else janrain.settings.packages.push('share');
+
+	janrain.settings.share.message = '';
+	janrain.settings.share.providers = ['email', 'facebook', 'linkedin', 'twitter'];
+
+})();
+function setShare(url, title, desc, img, provider) {
+	janrain.engage.share.setUrl(url);
+	janrain.engage.share.setTitle(title);
+	janrain.engage.share.setMessage(title);
+	janrain.engage.share.setDescription(desc);
+	janrain.engage.share.setImage(img);
+	janrain.engage.share.showProvider(provider);
+	janrain.engage.share.show();
+}
+</script><script>
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
+</script>
+<script type='text/javascript' src='https://www.edn.com/_static/??-eJx9jtEKwjAMRX/ILvqwMR/ET5GtjVu2Ji22ofj3Vpiggj6FS85JLpRobJCMkoHVRK8TSYIFcxzsChcSC6OSdxDnkINso2GSZkk7qHpFvDqsUgIbmOspc8Po7+/Q60eekSsqtA76FK4qNlOQ9A3+L1PITZgToFYhrITGD+Uz/apYI/KIbtuf+XRo+7brj12/Xx4deGOS'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202015.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.3',blog:'158134410',post:'4364021',tz:'0',srv:'www.edn.com'} ]);
+	_stq.push([ 'clickTrackerInit', '158134410', '4364021' ]);
+</script>
+<!-- DON'T REMOVE THIS LINE! It is what displays the WordPress dashboard settings on the top of the page-->
+
+<!--Carbon Pixel-->
+<script src="https://files.carbonpay.app/carbon_embed.bundle.js" handle="edn"></script>
+
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"80caaa83e0","applicationID":"186161870","transactionName":"NgMGZREHV0JUAkEMDQ9JJVIXD1ZfGhJcCwUNAw==","queueTime":0,"applicationTime":195,"atts":"GkQRE1kdRB0XABdfGRwb","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
